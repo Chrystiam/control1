@@ -1,0 +1,40 @@
+<div class='client'>
+<%- model_class = Client -%>
+
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+         onclick="$.lazybox.close()">&times;</button>
+         <h3>Datos Básicos Cliente</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <dl class="dl-horizontal">
+          <dt><strong>Tipo Doc:</strong></dt>
+          <dd><%= @client.doc.name %>.</dd>
+          <dt><strong>Identificación:</strong></dt>
+          <dd><%= @client.identification %>.</dd>
+          <dt><strong>Nombre:</strong></dt>
+          <dd><%= @client.name %>.</dd>
+          <dt><strong>Responsable:</strong></dt>
+          <dd><%= @client.attendant %>.</dd>
+          <dt><strong>Email:</strong></dt>
+          <dd><%= @client.mail %>.</dd>
+          <dt><strong>Teléfono:</strong></dt>
+          <dd><%= @client.phone %>.</dd>
+          <dt><strong>Celular:</strong></dt>
+          <dd><%= @client.cell %>.</dd>
+          <dt><strong>Municipio:</strong></dt>
+          <dd><%= @client.city.name %>.</dd>
+        </dl>
+
+    </div>
+    
+    <div class="modal-footer">
+         <a href="#" class="btn" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+    
+</div>
+</div>

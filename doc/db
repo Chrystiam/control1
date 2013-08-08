@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel>
+<schema name="public" rect-visible="true" fill-color="#e1e1e1">
+</schema>
+
+<database name="op_development" encoding="UTF8" lc-collate="es_CO">
+</database>
+
+<table name="users" oids="true">
+	<schema name="public"/>
+	<position x="86" y="182"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying"/>
+	</column>
+	<constraint name="id" type="pk-constr" factor="10" table="public.users">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="roles" oids="true">
+	<schema name="public"/>
+	<position x="433" y="183"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="character varying"/>
+	</column>
+</table>
+
+<table name="assignments" oids="true">
+	<schema name="public"/>
+	<position x="304" y="376"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="user_id">
+		<type name="integer"/>
+	</column>
+</table>
+
+<relationship name="users_has_many_assignments"
+	 type="rel1n"
+	 src-required="false" dst-required="false"
+	 auto-sufix="true"
+	 table-name="users_has_many_assignments"
+	 src-table="public.users"
+	 dst-table="public.assignments"/>
+
+</dbmodel>

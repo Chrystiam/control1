@@ -1,0 +1,55 @@
+<%- model_class = Garment -%>
+
+<h3 id='text'>Prendas de Confección</h3>
+<br>
+<div id="buscar">
+    <%= form_tag request.path, :class => "well", :method => 'get' do %>
+
+      <div class = "row">
+           <div class="span9">
+                <div class = "row">
+                     <div class="span4">
+                          <b>Nombre: </b> 
+                          <%= text_field_tag :name, params[:name], 
+                           :class=>"span3" %>
+                     </div>
+                     <div class="span1">
+                         <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success' %>
+                     </div>
+                </div>
+           </div>
+      </div>
+
+    <% end %>
+</div>
+
+<table class='table table-striped table-bordered'>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Descripción</th>
+      <th>Referencia</th>
+      <th>Código</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @garments %>
+  </tbody>
+</table>
+
+ <div id='buton'>
+    <p class="pull-left">
+       <%= link_to "Agregar Nuevo", new_garment_path, :class => 'btn btn-primary', 
+           :remote => true %>
+    </p>
+</div>
+<div id='pagination' class="pagination">
+    <%= will_paginate(@garments, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                 :previous_label => '&laquo; Anterior', 
+                                 :next_label => 'Siguiente &raquo;') %>
+    <p id='total' class="pull-right">Total Prendas : <%= @garments.count %></p>
+</div>
+
+
+

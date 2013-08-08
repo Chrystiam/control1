@@ -1,0 +1,43 @@
+<%= simple_form_for([@purchase, @purchase_description], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Descripcion de la compra</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <div class="row">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Insumo</label>
+                        <div class="controls">
+                             <%= f.association :input, :collection => Input.all(:order => 'name'), :label => false %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Cantidad</label>
+                        <div class="controls">
+                             <%= f.input :amount, :label => false, :required => true, :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Valor</label>
+                        <div class="controls">
+                             <%= f.input :total_value, :label => false, :required => true, :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+
+    </div>
+<% end %>   

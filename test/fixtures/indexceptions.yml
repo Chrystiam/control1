@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  indicators: MyString
+  nmnm: false
+  nmsm: false
+  center: 
+
+two:
+  indicators: MyString
+  nmnm: false
+  nmsm: false
+  center: 

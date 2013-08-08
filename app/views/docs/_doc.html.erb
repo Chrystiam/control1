@@ -1,0 +1,11 @@
+<tr id=<%= "doc_#{doc.id}" %>>
+ <td><%= doc.id %></td>
+ <td><%= doc.name %></td>
+ <td>
+   <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), doc, :remote => true %> |
+   <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_doc_path(doc), :remote => true %> |
+   <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), doc, 
+       :data => { :confirm => 'Esta Seguro?' },
+       :method => :delete, :remote => true %>
+ </td>
+</tr>

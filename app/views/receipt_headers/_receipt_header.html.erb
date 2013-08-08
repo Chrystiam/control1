@@ -1,0 +1,18 @@
+<tr id=<%= "receipt_header_#{receipt_header.id}" %>>
+  <td><%= link_to receipt_header.id, edit_receipt_header_path(receipt_header), :remote => true %></td>
+  <td><%= receipt_header.consecutive %></td>
+  <td><%= receipt_header.client %></td>
+  <td><%= receipt_header.adress %></td>
+  <td><%= receipt_header.city.name %></td>
+  <td><%= receipt_header.identification %></td>
+  <td><%= receipt_header.phone %></td>
+ 
+  <td>
+    <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), receipt_header, :remote => true %> |
+    <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_receipt_header_path(receipt_header), :remote => true %> |
+    <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), receipt_header, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %> |
+    <%= link_to image_tag('description.png', :width=>'40', :title=>'Descripcion' ), receipt_header_receipt_descriptions_path(receipt_header), :remote => true %>
+  </td>
+</tr>

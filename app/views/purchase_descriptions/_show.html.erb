@@ -1,0 +1,40 @@
+<div class='purchase_description'>
+    <%- model_class = PurchaseDescription -%>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h4>Descripcion de la Compra</h4>
+             <img id='lazyimme' src="assets/logo_sena.png">
+        </div>
+
+        <div class="modal-body">
+            <p>
+			  <b>Compra:</b>
+			  <%= @purchase_description.purchase_id %>
+			</p>
+
+			<p>
+			  <b>Insumo:</b>
+			  <%= @purchase_description.input.name %>
+			</p>
+
+			<p>
+			  <b>Cantidad:</b>
+			  <%= @purchase_description.amount %>
+			</p>
+
+			<p>
+			  <b>Total:</b>
+			  <%= @purchase_description.total_value %>
+			</p>
+
+        </div>
+        
+        <div id='fo' class="modal-footer">
+             <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+</div>

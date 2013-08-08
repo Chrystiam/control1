@@ -1,0 +1,2 @@
+module ConsumeGarmentsHelper
+end

@@ -1,0 +1,11 @@
+<tr id=<%= "city_#{city.id}" %>>
+ <td><%= city.id %></td>
+ <td><%= city.name %></td>
+ <td>
+   <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), city, :remote => true %> |
+   <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_city_path(city), :remote => true %> |
+   <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), city, 
+       :data => { :confirm => 'Esta Seguro?' },
+       :method => :delete, :remote => true %>
+ </td>
+</tr>

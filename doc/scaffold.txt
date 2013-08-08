@@ -1,0 +1,75 @@
+#Maestras ------------------------------------------------------------------------------------
+rails g scaffold country name:string --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed countries -f
+
+rails g scaffold region name:string country:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed regions -f
+
+rails g scaffold city name:string region:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed cities -f
+
+rails g scaffold doc name:string --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed docs -f
+
+rails g scaffold client identification:string name:string attendant:string mail:string phone:string cell:string city:references doc:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed clients -f
+
+rails g scaffold type name:string --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed types -f
+
+rails g scaffold garment name:string reference:string code:string gender:boolean type:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed garments -f
+
+rails g scaffold unity name:string --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed unities -f
+
+#categorias insumos
+rails g scaffold category name:string description:string --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed categories -f
+
+# insumos
+rails destroy scaffold input
+rails g scaffold input name:string description:string category:references unit_cost:float meter_cost:float total_cost:float unity:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed inputs -f
+
+rails g model input name:string description:string category:references unit_cost:float meter_cost:float total_cost:float unity:references 
+
+rails g scaffold consume_garment input:references unity:references cost:float quantity_consume:float garment:references --skip-stylesheets
+rake db:migrate
+rails g bootstrap:themed consume_garments -f
+
+
+rails destroy model consume_garment 
+
+rails g model consume_garment input:references unity:references cost:float quantity_consume:float garment:references 
+
+
+rails g scaffold production_order programing_date cliente_id:integer op:integer garment_id:integer programed_amount:integer --skip-stylesheets
+
+rails g scaffold preproduction_cost plotting:float perforated_paper:float plastic:float labeling:float printing:float production_order_id:integer--skip-stylesheets
+
+rails g scaffold receipt_description amount:integer garment_id:integer unity_value:float total_value:float total:float --skip-stylesheets
+
+rails g scaffold receipt_payment consecutive date receipt_header_id:integer  receipt_description_id:integer user_id:integer --skip-sylesheets
+
+rails g scaffold receipt_header client adress city_id:integer identification phone --skip-stylesheets
+
+rails g scaffold supplier doc_id:integer identification social_reason responsible ocupation adress phone cell city_id:integer --skip-sylesheets
+
+rails g scaffold purchase supplier_id:integer date --skip-sylesheets
+
+rails g scaffold purchase_description purchase_id:integer input_id:integer amount:integer total_value --skip-sylesheets
+
+
+
+sed -i 's/Ats/Bsc/g' *.*

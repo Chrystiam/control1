@@ -1,0 +1,42 @@
+ <BR>
+<h3 id='order'>Usuarios</h3>
+<BR>
+<div id="buscar">
+   <%= form_tag users_path, :class => "well form-search", :method => 'get' do %>
+     <p>
+       <b>Nombre: </b>
+       <%= text_field_tag :search, params[:search], :class=>"input-medium span4",  
+                          :placeholder => "Nombre Funcionario" %>
+       <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success' %>
+     </p>
+   <% end %>
+</div>
+
+<table class="table table-striped">
+
+ <thead>
+   <tr>
+     <th>Nombre Completo</th>
+     <th>Ubicación</th>
+     <th>Teléfono</th>
+     <th>Ip</th>
+     <th></th>
+     <th></th>
+   </tr>
+ </thead>
+ <tbody>
+    <%= render @users %>
+ </tbody>
+
+</table>
+
+ <div id='user' class="pagination">
+   <%= will_paginate(@users, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+   <p id='total' class="pull-right">Total Usuarios : <%= @users.count %></p>
+</div>
+<div id='use'>
+ <%= link_to 'Agregar', new_user_path, :class => "btn btn-primary", 
+ :remote => true if can? :create, User %>
+</div>

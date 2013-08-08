@@ -1,0 +1,29 @@
+<div class='purchase'>
+    <%- model_class = Purchase -%>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h4>Compra</h4>
+             <img id='lazyimme' src="assets/logo_sena.png">
+        </div>
+
+        <div class="modal-body">
+            <p>
+		      <b>Proveedor:</b>
+			  <%= @purchase.supplier.name %>
+			</p>
+
+			<p>
+			  <b>Fecha:</b>
+			  <%= @purchase.date %>
+			</p>
+        </div>
+        
+        <div id='fo' class="modal-footer">
+             <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+</div>

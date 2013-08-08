@@ -1,0 +1,15 @@
+<tr id=<%= "regional_#{regional.id}" %>>
+   <td><%= link_to regional.id, edit_regional_path(regional), :remote => true %></td>
+	<td><%= regional.name %></td>
+	<td><%= regional.director %></td>
+	<td><%= regional.phone %></td>
+	<td><%= regional.ip %></td>
+
+  <td>
+    <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), regional, :remote => true %> |
+    <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), :remote => true %> |
+    <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), regional, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %>
+  </td>
+</tr> 

@@ -1,0 +1,49 @@
+<%- model_class = Type -%>
+<div class="page-header">
+  <h3 id='order'>Tipos de Prendas</h>
+</div>
+<br>
+<div id="buscarr">
+    <%= form_tag request.path, :class => "well", :method => 'get' do %> 
+
+      <div class = "row">
+           <div class="span9">
+                <div class = "row">
+                     <div class="span5">
+                          <b> Prenda</b>
+                          <%= text_field_tag :name, params[:name], 
+                           :class=>"span4" %>
+                     </div>
+                     <div class="span1">
+                         <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-primary' %>
+                     </div>
+                      <%= hidden_field_tag :ind, "1" %>
+                </div>
+           </div>
+      </div>
+
+    <% end %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th> 
+      <th>Nombre</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @types %>
+  </tbody>
+</table>
+
+<%= link_to "Agregar Nueva", new_type_path, :remote => true,
+            :class => 'btn btn-primary' %>
+
+<div id='ocupa' class="pagination">
+    <%= will_paginate(@types, :renderer => WillPaginate::ActionView::LinkRenderer,
+       :previous_label => '&laquo; Anterior', 
+       :next_label => 'Siguiente &raquo;') %>
+   <p class="pull-right">Total Registros : <%= @types.count %></p>
+</div>

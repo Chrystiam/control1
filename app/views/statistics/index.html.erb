@@ -1,0 +1,42 @@
+<div id='admin' class="page-header">
+<h3>Promedios</h3>
+</div>
+<br>
+<div id='tab' class="well">
+
+   <table  class="table table-striped">
+     <thead>
+       <tr>
+         <th>Maestra</th>
+         <th>Descripción</th>
+       </tr>
+     </thead>
+
+     <tbody>
+        <tr>
+            <td><%= link_to "Estampados", :prints_statistics, :remote => true %></td>
+            <td>Unidades Estampadas</td>
+        </tr>
+        <tr>
+            <td><%= link_to "Confecciones", :assemblies_statistics, :remote => true %>
+            <td>Unidades Confeccionadas</td>
+        </tr>
+        <tr>
+            <td><%= link_to "Trazos", :outlines_statistics, :remote => true %>
+            <td>Unidades Trazadas</td>
+        </tr>
+        <tr>
+            <td><%= link_to "Cortes", :cuts_statistics, :remote => true %>
+            <td>Unidades Cortadas</td>
+        </tr>
+        <tr>
+            <td><%= link_to "Bordados", :embroideries_statistics, :remote => true %>
+            <td>Unidades Bordadas</td>
+        </tr>
+         <tr>
+            <td><%= link_to "Etiquetados", :labels_statistics, :remote => true %>
+            <td>Unidades Etiquetadas</td>
+        </tr>
+     </tbody>
+   </table>
+</div>

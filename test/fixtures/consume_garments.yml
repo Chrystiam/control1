@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  input: 
+  unity: 
+  cost: 1.5
+  quantity_consume: 1.5
+  garment: 
+
+two:
+  input: 
+  unity: 
+  cost: 1.5
+  quantity_consume: 1.5
+  garment: 

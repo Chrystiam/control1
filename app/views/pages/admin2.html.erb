@@ -1,0 +1,44 @@
+<div id='admin' class="page-header">
+  <h3>Administración de Tablas Maestras</h3>
+</div>
+<br>
+<div id='tab' class="well">
+
+    <table  class="table table-striped">
+      <thead>
+        <tr>
+          <th>Maestra</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+
+      <tbody>
+          <tr>
+             <td><img src="assets/departamentos.png", width='25'><%= link_to "Departamentos", regions_path %></td>
+             <td>Departamentos</td>
+         </tr>
+         <tr>
+             <td><img src="assets/ciudad.png", width='25'><%= link_to "Ciudades", cities_path %></td>
+             <td>Ciudades</td>
+         </tr>
+         <tr>
+             <td><img src="assets/prendas.png", width='25'><%= link_to "Tipos de Prendas", types_path %></td>
+             <td>Tipos de Prendas</td>
+         </tr>
+         <tr>
+             <td><img src="assets/pren.png", width='25'><%= link_to "Prendas", garments_path %></td>
+             <td>Prendas</td>
+         </tr>
+         <tr>
+             <td><img src="assets/medida.png", width='25'><%= link_to "Unidades", unities_path %></td>
+             <td>Unidades</td>
+         </tr>        
+      </tbody>
+    </table>
+    <div id='img'>
+      <%= link_to image_tag('next.png', :title=>'Siguiente', :width=>'30'),admin3_path  %>
+    </div>
+    <div id='imge'>
+      <%= link_to image_tag('back.png', :title=>'Atras', :width=>'30'), admin_path  %>
+    </div>
+</div>

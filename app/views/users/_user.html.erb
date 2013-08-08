@@ -1,0 +1,11 @@
+<%= display_base_errors user %>
+
+<tr id=<%= "user_#{user.id}" %>>
+ <td><%= truncate user.name %></td>
+ <td><%= user.location %></td>
+ <td><%= user.phone %></td>
+ <td><%= user.ip %></td>
+ <td><%= link_to image_tag('ver.png', :width=>'30', :title => "Mostrar Usuario"), user, 
+      :remote => true %> |</td> 
+ <td><%= link_to image_tag("edit.png", :width=>'30', :title => "editar usuario"), edit_user_path(user), :remote => true %></td>
+</tr>

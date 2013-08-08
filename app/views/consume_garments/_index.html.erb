@@ -1,0 +1,74 @@
+<%- model_class = ConsumeGarment -%>
+
+<div class="responsive">
+  
+     <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+         onclick="$.lazybox.close()">&times;</button>
+         <h4>Consumo por Prenda: <%= @garment.name %></h4>
+         <img id='lazyime' src="assets/logo_sena.png">
+     </div>
+     
+     <div class="modal-body">
+     
+
+         <div class="accordion" id="accordion1"> 
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a id='link' class="accordion-toggle" data-toggle="collapse"
+                    data-parent="#accordion1" href="#note1">
+                    Ver / Ocultar COSTOS
+                 </a>
+               </div>
+               <div class="accordion-body collapse in" id="note1">
+                 <div class="accordion-inner">
+
+                       <table class="table table-striped">
+                          <thead>
+                            <tr>
+                              <th>Item</th>
+                              <th>Insumo</th>
+                              <th>Unidad</th>
+                              <th>Cantidad Requerida</th>
+                              <th>Costo</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                           <tfoot>
+                             <tr>
+                               <td></td>
+                               <td></td>
+                               <td></td>
+                               <th>Total</th>
+                               <th><p align="right"><%= number_to_currency(@consume_garments.sum(&:cost), 
+                                      :precision => 0, :unit => "", :delimiter => ".") %></p></th>
+                             </tr>    
+                </div>
+                           </tfoot>
+                          <tbody>
+                              <%= render @consume_garments %>
+                          </tbody>
+                       </table>
+                        <input id='asd' type='text'> 
+                 </div>
+               </div>
+             </div>
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a id='link' class="accordion-toggle" data-toggle="collapse"
+                    data-parent="#accordion1" href="#note2">
+                    Ingresar Costo
+                 </a>
+               </div>
+               <div class="accordion-body collapse" id="note2">
+                 <div class="accordion-inner">
+                      <%= render :partial => 'form' %>
+                 </div>
+               </div>
+             </div>
+         </div>
+         
+     </div>
+   
+</div>
+

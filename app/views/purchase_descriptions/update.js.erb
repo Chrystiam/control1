@@ -1,0 +1,3 @@
+$('tr#purchase_description_<%= @purchase_description.id %>').replaceWith("<%= escape_javascript(render @purchase_description) %>")
+$.lazybox.close()
+

@@ -1,0 +1,66 @@
+<%- model_class = ReceiptHeader -%>
+
+<div class='receipt_headers'>
+<%= simple_form_for(@receipt_header, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Encabezado del Recibo</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <%= display_base_errors @receipt_header %>
+            <div class="row">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Consecutivo</label>
+                        <div class="controls">
+                             <%= f.input :consecutive, :label => false,  :required => true %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Cliente</label>
+                        <div class="controls">
+                             <%= f.input :client, :label => false,  :required => true %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Direccion</label>
+                        <div class="controls">
+                             <%= f.input :adress, :label => false,  :required => true %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Ciudad</label>
+                        <div class="controls">
+                             <%= f.autocomplete_field :city_name, autocomplete_city_name_receipt_headers_path, :id_element => '#id' %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Identificacion</label>
+                        <div class="controls">
+                             <%= f.input :identification, :label => false,  :required => true %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Telefono</label>
+                        <div class="controls">
+                             <%= f.input :phone, :label => false,  :required => true %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+    </div>
+
+<% end %>    

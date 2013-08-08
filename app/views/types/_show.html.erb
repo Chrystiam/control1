@@ -1,0 +1,23 @@
+<%- model_class = Type -%>
+
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+         <h4>Tipos de Prendas</h4>
+    </div>
+
+    <div class="modal-body">
+        <dl class="dl-horizontal">
+        <dt>Descripción:</strong></dt>
+        <dd><%= @type.name %></dd>
+        </dl>
+    </div>
+
+    <div id='fo' class="modal-footer">
+         <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+
+</div>
+
+

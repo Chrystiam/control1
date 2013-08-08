@@ -1,0 +1,20 @@
+<tr id=<%= "supplier_#{supplier.id}" %>>
+    <td><%= supplier.id %></td>
+    <td><%= supplier.name %></td>
+    <td><%= supplier.doc.name %></td>
+    <td><%= supplier.identification %></td>
+    <td><%= supplier.social_reason %></td>
+    <td><%= supplier.responsible %></td>
+    <td><%= supplier.ocupation %></td>
+    <td><%= supplier.adress %></td>
+    <td><%= supplier.phone %></td>
+    <td><%= supplier.cell %></td>
+    <td><%= supplier.city.name %></td>
+ <td>
+   <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), supplier, :remote => true %> |
+   <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_supplier_path(supplier), :remote => true %> |
+   <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), supplier, 
+       :data => { :confirm => 'Esta Seguro?' },
+       :method => :delete, :remote => true %>
+ </td>
+</tr>

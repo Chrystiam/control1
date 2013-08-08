@@ -1,0 +1,49 @@
+<div class="page-header">
+     <h4>Centro de Formación</h4>
+</div>
+
+<%= simple_form_for(@center, :html => { :class => 'form-horizontal' }, 
+    :remote => true) do |f| %>
+
+    <div class="row">
+    	<div class="span8">
+            <div class="row">
+		    	<div class="span1">
+		            <b class="pull-right">Centro</b>
+		        </div>
+		        <div class="span7">
+		        	 <%= f.input :name,	:label => false, 
+		                         :input_html => {:class => 'span7'}  %>
+		        </div>
+		    </div>
+		    <br>
+		    <div class="row">
+		    	<div class="span1">
+		            <b class="pull-right">Regional</b>
+		        </div>
+		        <div class="span7">
+		        	 <%= f.association :regional, :label => false, 
+		                               :input_html => {:class => 'span7'}  %>
+		        </div>
+		    </div>
+		    <br>
+		    <div class="row">
+		    	<div class="span1">
+		            <b class="pull-right">Estado</b>
+		        </div>
+		        <div class="span5">
+		        	 <%= f.input :status, :as => :boolean, :label => false, 
+		                         :input_html => {:class => 'span5'}  %>
+		        </div>
+		    </div>
+	    </div>
+    </div>
+ 
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, 'Guardar', :class => 'btn-primary' %>
+  </div>
+
+<% end %>
+
+
+

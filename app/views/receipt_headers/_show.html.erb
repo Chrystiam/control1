@@ -1,0 +1,14 @@
+<%- model_class = ReceiptHeader -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class=''>
+  <p><%= @receipt_header.id %></p>
+  <p><%= @receipt_header.consecutive %></p>
+  <p><%= @receipt_header.client %></p>
+  <p><%= @receipt_header.adress %></p>
+  <p><%= @receipt_header.city_name %></p>
+  <p><%= @receipt_header.identification %></p>
+  <p><%= @receipt_header.phone %></p>
+</div>

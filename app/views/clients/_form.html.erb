@@ -1,0 +1,103 @@
+<%- model_class = Client -%>
+
+<%= simple_form_for @client, :html => { :remote => true } do |f| %>
+
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+         onclick="$.lazybox.close()">&times;</button>
+         <h3>Datos Básicos Cliente</h3>
+    </div>
+
+    <div class="modal-body">
+         
+        <%= f.error_notification %>
+        <%= display_base_errors @client %>
+
+        <div class="row">
+            <div class="span6">
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Tipo Documento</label>
+                    <div class="controls">
+                         <%= f.association :doc, :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Identificación</label>
+                    <div class="controls">
+                         <%= f.input :identification, :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Razón Social</label>
+                    <div class="controls">
+                         <%= f.input :name, :label => false, :required => true,
+                                     :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Responsable</label>
+                    <div class="controls">
+                         <%= f.input :attendant, :label => false, :required => true,
+                                     :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Email</label>
+                    <div class="controls">
+                         <%= f.input :mail, :label => false, :required => true,
+                                     :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Teléfono</label>
+                    <div class="controls">
+                         <%= f.input :phone, :label => false, :required => true,
+                                     :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Celular</label>
+                    <div class="controls">
+                         <%= f.input :cell, :label => false, :required => true,
+                                     :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Ciudad</label>
+                    <div class="controls">
+                         <%= f.autocomplete_field :city_name, autocomplete_city_name_clients_path,
+                             :id_element => '#id', :class => "span4" %>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id='fo' class="modal-footer">
+         <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+         <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+    </div>
+
+</div>
+
+<% end %>
+
+
+
+
+
+

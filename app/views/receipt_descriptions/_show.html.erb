@@ -1,0 +1,40 @@
+<div class='receipt_description'>
+    <%- model_class = ReceiptDescription -%>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h4>Descripciones de Recibos</h4>
+             <img id='lazyimme' src="assets/logo_sena.png">
+        </div>
+
+        <div class="modal-body">
+          <p>
+            <b>Amount:</b>
+            <%= @receipt_description.amount %>
+          </p>
+
+          <p>
+            <b>Garment:</b>
+            <%= @receipt_description.garment_id %>
+          </p>
+
+          <p>
+            <b>Unity value:</b>
+            <%= @receipt_description.unity_value %>
+          </p>
+
+          <p>
+            <b>Total value:</b>
+            <%= @receipt_description.total_value %>
+          </p>
+
+        </div>
+        
+        <div id='fo' class="modal-footer">
+             <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+</div>

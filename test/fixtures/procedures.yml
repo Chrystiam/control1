@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  embroidery_delivery: MyString
+  embroidery_real: MyString
+  embroidery_end: MyString
+  print_delivery: MyString
+  print_real: MyString
+  print_end: MyString
+  cutting_delivery: MyString
+  cutting_real: MyString
+  cutting_end: MyString
+  outline_delivery: MyString
+  outline_real: MyString
+  outline_end: MyString
+  assembly_delivery: MyString
+  assembly_real: MyString
+  assembly_end: MyString
+  washing_delivery: MyString
+  washing_real: MyString
+  washing_end: MyString
+  tinte_delivery: MyString
+  tinte_real: MyString
+  tinte_end: MyString
+
+two:
+  embroidery_delivery: MyString
+  embroidery_real: MyString
+  embroidery_end: MyString
+  print_delivery: MyString
+  print_real: MyString
+  print_end: MyString
+  cutting_delivery: MyString
+  cutting_real: MyString
+  cutting_end: MyString
+  outline_delivery: MyString
+  outline_real: MyString
+  outline_end: MyString
+  assembly_delivery: MyString
+  assembly_real: MyString
+  assembly_end: MyString
+  washing_delivery: MyString
+  washing_real: MyString
+  washing_end: MyString
+  tinte_delivery: MyString
+  tinte_real: MyString
+  tinte_end: MyString

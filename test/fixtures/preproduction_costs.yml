@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plotting: 1.5
+  perforated_paper: 1.5
+  plastic: 1.5
+  labeling: 1.5
+  printing: 1.5
+  production_order_id: 1
+
+two:
+  plotting: 1.5
+  perforated_paper: 1.5
+  plastic: 1.5
+  labeling: 1.5
+  printing: 1.5
+  production_order_id: 1

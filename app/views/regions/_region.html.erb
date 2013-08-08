@@ -1,0 +1,12 @@
+<tr id=<%= "region_#{region.id}" %>>
+ <td><%= region.id %></td>
+ <td><%= region.name %></td>
+ <td><%= region.country.name %></td>
+ <td>
+   <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), region, :remote => true %> |
+   <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_region_path(region), :remote => true %> |
+   <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), region, 
+       :data => { :confirm => 'Esta Seguro?' },
+       :method => :delete, :remote => true %>
+ </td>
+</tr>

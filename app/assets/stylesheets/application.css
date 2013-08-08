@@ -1,0 +1,514 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require lazybox
+ *= require_jquery-ui
+ *= require_selfdi
+ *= require bootstrap_and_overrides
+ *= require_tree .
+*/  
+ 
+#lazybox div.ingreso { max-width: 1000px;  }
+#lazybox div.productions { max-width: 800px; }
+#lazybox div.receipt_headers { max-width: 800px; }
+#lazybox div.center { max-width: 600px; }
+#lazybox div.about { max-width: 600px; }
+#lazybox div.garment { max-width: 600px; }
+#lazybox div.user { max-width: 600px; }
+#lazybox div.client { max-width: 600px; }
+#lazybox div.consume_garment { max-width: 900px; }
+#lazybox.confirm { background-color: #e2e2e2 !important; }
+
+#lazybox {
+  background-image: url('fondo.png');
+  background-size: 100%;
+  border-radius: 5px; 
+  border: 1px solid #ccc;
+  box-shadow: 0 1px 5px #333;
+  display: none;
+  left: 49%;
+  padding: 20px;
+  position: absolute;
+  top: 49%;
+  z-index: 1001;
+  &.confirm { max-width: 300px;  }
+  .lazy_buttons { margin-top: 15px; text-align: right;  }
+  img.lazy_img { display: block; }
+  #lazybox_body { position: relative;  }
+}
+#lazybox_close.img {
+  background: url('close.png') no-repeat;
+  width: 25px;
+  height: 25px;
+  top: -17px;
+  right: -17px;
+}
+
+#lazybox.lazybox {
+  background: transparent;
+  padding: 0;
+  border: 5px solid #222;
+}
+
+#lazybox.player {
+  border: none;
+  background: #222;
+}
+
+#lazybox.confirm {
+  border-radius: 0;
+  border: 3px solid #222;
+  a#lazybox_close { display: none; }
+}
+
+#lazybox.custom {
+  border: 1px solid #0E0E0E;
+  a#lazybox_close {
+    color: cyan;
+    top: -10px;
+    right: 10px;
+    font: bold 54px/100% Arial, Helvetica, sans-serif;
+    &:hover { color: magenta; }
+  }
+}
+
+#lazybox.top {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+#lazybox.sticker {
+ -webkit-border-bottom-left-radius: 20px 500px;
+ -webkit-border-bottom-right-radius: 500px 30px;
+ -webkit-border-top-right-radius: 5px 100px;
+ -moz-border-radius-bottomleft: 20px 500px;
+ -moz-border-radius-bottomright: 500px 30px;
+ -moz-border-radius-topright: 5px 100px;
+ border-radius-bottomleft: 20px 500px;
+ border-radius-bottomright: 500px 30px;
+ border-radius-topright: 5px 100px;
+ border-bottom-left-radius: 20px 500px;
+ border-bottom-right-radius: 500px 30px;
+ border-top-right-radius: 5px 100px;
+}
+
+img#lazyim{
+  margin-top: -50px;
+  margin-left: 250px;
+  width: 50px;
+}
+
+input#asd{
+  margin-top: -20px;
+  margin-right: 50px;
+  float: right;
+  width: 8%;
+}
+
+div#play{
+  margin-top: -25px;
+  margin-left: 120px;
+}
+
+h3#order{
+  margin-top: -40px;
+}
+
+img#lazyimm{
+  margin-top: -80px;
+  margin-left: 250px;
+  width: 50px;
+}
+
+div#video{
+  background-color: black;
+}
+
+div#inputs{
+  margin-top: 25px;
+  margin-left: 350px;
+}
+
+div#docs{
+  margin-top: -65px;
+  margin-left: 350px;
+}
+
+div#porder{
+  margin-top: -45px;
+  margin-left: 450px;
+}
+
+div#ocupa{
+  margin-top: -50px;
+  margin-left: 450px;
+}
+
+div#use{
+  margin-top: -40px;
+}
+
+div#user{
+  margin-top: 25px;
+  margin-left: 450px;
+}
+
+div#centers{
+  margin-top: -45px;
+  margin-left: 450px;
+}
+
+p#inputs{
+  margin-top: -40px;
+}
+
+p#vi{
+  margin-left: 200px;
+}
+
+h1#user{
+  font-family:  Calibri;
+  margin-top: -8px;
+  font-size: 35px;
+  text-align: center;
+}
+
+img#lazyimme{
+  margin-top: -60px;
+  margin-left: 290px;
+  width: 50px;
+}
+
+
+
+img#lazyime{
+  margin-top: -60px;
+  margin-left: 300px;
+  width: 50px;
+}
+
+div#book{
+margin-top: -15px;
+}
+
+div#total{
+  float: right;
+}
+
+img#user{
+  margin-top: -60px;
+  margin-left: 820px;
+}
+
+input#total{
+  width: 20px;
+}
+
+input#totall{
+  width: 100px;
+  
+}
+
+form#bus{
+  float: right;
+  padding-right: -20px;
+  margin-top: 2px;
+}
+
+input#bus{
+  float: right;
+  padding-right: -20px;
+  margin-top: -35px;
+}
+
+div#forma1{
+  margin-left: 10px;
+  width: 95%;
+  margin-top: -40px;
+  height: 600px;
+  background-color: black;
+}
+
+img#dsd{
+  margin-left: -28px;
+  margin-top: -35px;
+  width: 860px;
+}
+
+.colc{
+font-family: san-serif;
+color: #238276;
+}
+
+.colc:hover
+{
+font-family: san-serif;
+color: #fc7323;
+}
+
+.colc2{
+font-family: san-serif;
+color: black;
+}
+
+.colc2:hover
+{
+font-family: san-serif;
+color: #fc7323;
+}
+
+
+
+li#admin{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 50px;
+  margin-top: -20px;
+}
+
+li#invent{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 120px;
+  margin-top: -20px;
+}
+
+li#client{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 210px;
+  margin-top: -20px;
+}
+
+li#produc{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 570px;
+  margin-top: -20px;
+}
+
+li#login{
+  list-style-type: circle;
+  color: #fc7323;
+ margin-left: 50px;
+ margin-top: -20px;
+}
+
+li#salir{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 660px;
+  margin-top: -20px;
+}
+
+li#orden{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 290px;
+  margin-top: -20px;
+}
+
+li#materiales{
+  list-style-type: circle;
+  color: #fc7323;
+margin-left: 390px;
+margin-top: -20px;
+}
+
+li#almacen{
+  list-style-type: circle;
+  color: #fc7323;
+margin-left: 670px;
+margin-top: -20px;
+}
+
+li#prendas{
+  list-style-type: circle;
+  color: #fc7323;
+  margin-left: 490px;
+  margin-top: -20px;
+}
+
+div#fo{
+  background-color: black;
+}
+
+a#link{
+  color: white;
+}
+
+div#main{
+  border-left: 2%;
+  border-radius: 2%;
+  background-color: #D8D8D8;
+  height: 372px;
+  margin-left: -18px;
+  width: 99.7%;
+  margin-top: 5px; 
+}
+
+div#forma2{
+  border-left: 2%;
+  border-radius: 2%;
+  height: 100px; 
+  width: 100%;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-image: url('centro3.png');
+}
+
+footer#foter{
+  color: #7A3A03;
+  border-left: 2%;
+  border-radius: 2%;
+  margin-top:-15px;
+  margin-left: -18px; 
+  width: 102.9%;
+  height: 40px;
+  background-color: #B2B2B2;
+  border-radius: 4px; 
+}
+
+small#by{
+  margin-top: 8px;
+  margin-left: 50px;
+}
+
+div#imlog{
+  margin-top: -81px;
+  margin-left: 280px;
+}
+
+nav#by{
+  color: black;
+  margin-top: 8px;
+  padding-right: 15px;
+}
+
+div#log{
+  margin-top: -80px;
+  padding-right: 40px;
+  width: 110px;
+  float: right;
+  margin-left: -50px;
+}
+
+div#decla{
+  width: 300px;
+  margin-left: 1020px;
+}
+
+
+
+img#efep{
+  margin-left: -850px;
+  width: 400px;
+  margin-top: -43px;
+}
+
+h1#con{
+  margin-left: 100px;
+  margin-top: -120px;
+  color: black;
+  font-size: 60px;
+  font-family:  Calibri;
+}
+
+h1#ini{
+  margin-left: 100px;
+  color: black;
+  font-size: 40px;
+   font-family:  Calibri;
+}
+
+hr#con{
+  margin-left: 30px;
+  width: 630px;
+}
+
+div#tab{
+  margin-top: -45px;
+}
+
+div#admin{
+  margin-top: -20px;
+}
+
+div#img{
+  float: right;
+  margin-top: -30px;
+}
+
+div#imge{
+  margin-top: -20px;
+}
+
+div#pagination{
+  margin-left: 400px;
+}
+
+p#total{
+  margin-top: -25px;
+}
+
+p#ocupa{
+  margin-top: 25px;
+}
+
+div#buton{
+  margin-top: 3 0px;
+  margin-left: -30px;
+}
+
+div#btnbus{
+  margin-left: -200px;
+}
+
+div#table{
+  margin-top: -15px;
+}
+
+div#buscar{
+  margin-top: -20px;
+}
+
+div#busc{
+  margin-top: -20px;
+  width: 300px;
+}
+
+div#buscarr{
+  margin-top: -55px;
+}
+
+h3#text{
+  margin-top: -10px;
+} 
+
+h3#texto{
+  margin-top: -40px;
+} 
+
+p#user{
+  margin-top: -30px;
+  margin-left: 850px;
+  color: white;
+}
+
+div#saldo{
+  margin-left: 580px;
+  margin-top: -30px;
+}
+
+blockquote#uno{
+  margin-left: 500px;
+  margin-top: -380px;
+
+}
+
+/* Paginación */
+
+
+

@@ -1,0 +1,14 @@
+<tr id=<%= "client_#{client.id}" %>>
+    <td><%= link_to client.id, client_path(client), :remote => true %></td>
+    <td><%= client.doc.name %></td>
+    <td><%= client.identification %></td>
+    <td><%= client.name %></td>
+    <td><%= client.attendant %></td>
+    <td><%= client.phone %></td>
+    <td>
+      <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_client_path(client),  :remote => true %>
+      <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), client_path(client),
+                  :method => :delete,
+                  :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+    </td>
+</tr>

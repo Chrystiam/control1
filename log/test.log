@@ -1,0 +1,248 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Started GET "/" for 172.25.47.77 at 2013-08-06 10:09:17 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (11.7ms)
+  [1m[36mUser Load (148.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (13.9ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 695ms (Views: 498.6ms | ActiveRecord: 194.4ms)
+Started GET "/" for 172.25.47.80 at 2013-08-06 10:13:45 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+Started GET "/login" for 172.25.47.73 at 2013-08-06 10:14:11 -0500
+Processing by SessionsController#new as JS
+  Rendered sessions/_form.html.erb (7.1ms)
+  Rendered sessions/new.js.erb (12.3ms)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+Started POST "/sessions" for 172.25.47.72 at 2013-08-06 10:14:21 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"william.betancur@gmail.com", "password"=>"[FILTERED]", "commit"=>"Ingresar"}
+  [1m[36mUser Load (82.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'william.betancur@gmail.com') LIMIT 1[0m
+Redirected to http://10.74.68.156/
+Completed 302 Found in 566ms (ActiveRecord: 82.9ms)
+Started GET "/" for 172.25.47.72 at 2013-08-06 10:14:22 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.6ms)
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mRole Load (1.5ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 33.1ms | ActiveRecord: 3.5ms)
+Started GET "/inventory" for 172.25.47.72 at 2013-08-06 10:14:26 -0500
+Processing by PagesController#inventory as HTML
+  Rendered pages/inventory.html.erb within layouts/application (4.0ms)
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mRole Load (1.9ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 30.0ms | ActiveRecord: 3.8ms)
+Started GET "/clients" for 172.25.47.76 at 2013-08-06 10:14:28 -0500
+Processing by ClientsController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mClient Load (45.5ms)[0m  [1mSELECT "clients".* FROM "clients" WHERE (upper(name) like '%%') ORDER BY id DESC LIMIT 3 OFFSET 0[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM "clients" WHERE (upper(name) like '%%')
+  [1m[36mDoc Load (2.7ms)[0m  [1mSELECT "docs".* FROM "docs" WHERE "docs"."id" = 1 LIMIT 1[0m
+  [1m[35mDoc Load (1.5ms)[0m  SELECT "docs".* FROM "docs" WHERE "docs"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "docs".* FROM "docs" WHERE "docs"."id" = 2 LIMIT 1[0m
+  Rendered clients/_client.html.erb (102.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "clients" WHERE (upper(name) like '%%')
+  Rendered clients/index.html.erb within layouts/application (247.6ms)
+  [1m[36mRole Load (2.1ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 356ms (Views: 277.5ms | ActiveRecord: 69.7ms)
+Started GET "/production_orders" for 172.25.47.76 at 2013-08-06 10:14:30 -0500
+Processing by ProductionOrdersController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mProductionOrder Load (21.4ms)[0m  [1mSELECT "production_orders".* FROM "production_orders" LIMIT 3 OFFSET 0[0m
+  [1m[35mClient Load (1.4ms)[0m  SELECT "clients".* FROM "clients" WHERE "clients"."id" = 1 LIMIT 1
+  [1m[36mGarment Load (13.2ms)[0m  [1mSELECT "garments".* FROM "garments" WHERE "garments"."id" = 5 LIMIT 1[0m
+  Rendered production_orders/_production_order.html.erb (103.9ms)
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM "production_orders" 
+  Rendered production_orders/index.html.erb within layouts/application (216.3ms)
+  [1m[36mRole Load (2.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 335ms (Views: 254.5ms | ActiveRecord: 70.2ms)
+Started GET "/inputs" for 172.25.47.72 at 2013-08-06 10:14:32 -0500
+Processing by InputsController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mCategory Load (73.6ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY id[0m
+  [1m[35mInput Load (119.5ms)[0m  SELECT "inputs".* FROM "inputs" WHERE (upper(name) like '%%') ORDER BY name LIMIT 3 OFFSET 0
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "inputs" WHERE (upper(name) like '%%')[0m
+  [1m[35mCategory Load (1.6ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 1 LIMIT 1
+  [1m[36mCategory Load (1.5ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."id" = 7 LIMIT 1
+  Rendered inputs/_input.html.erb (34.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "inputs" WHERE (upper(name) like '%%')[0m
+  Rendered inputs/index.html.erb within layouts/application (245.5ms)
+  [1m[35mRole Load (2.0ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 416ms (Views: 159.5ms | ActiveRecord: 218.8ms)
+Started GET "/garments" for 172.25.47.72 at 2013-08-06 10:14:33 -0500
+Processing by GarmentsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mGarment Load (2.1ms)[0m  SELECT "garments".* FROM "garments" WHERE (upper(name) like '%%') ORDER BY name LIMIT 3 OFFSET 0
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "garments" WHERE (upper(name) like '%%')[0m
+  Rendered garments/_garment.html.erb (21.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "garments" WHERE (upper(name) like '%%')
+  Rendered garments/index.html.erb within layouts/application (46.0ms)
+  [1m[36mRole Load (2.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 68.3ms | ActiveRecord: 7.0ms)
+Started GET "/statistics" for 172.25.47.72 at 2013-08-06 10:14:35 -0500
+Processing by StatisticsController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered statistics/index.html.erb within layouts/application (10.5ms)
+  [1m[36mRole Load (2.0ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 47ms (Views: 36.6ms | ActiveRecord: 3.5ms)
+Connecting to database specified by database.yml
+Started GET "/control/" for 172.25.47.78 at 2013-08-06 11:55:39 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (12.1ms)
+  [1m[36mUser Load (17.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (2.9ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 568ms (Views: 516.2ms | ActiveRecord: 49.6ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-06 19:55:36 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (13.8ms)
+  Rendered layouts/_messages.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 139ms (Views: 136.5ms | ActiveRecord: 0.0ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-06 19:55:48 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-06 19:55:52 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-06 19:55:55 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-06 19:55:57 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-06 20:20:07 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (12.1ms)
+  Rendered layouts/_messages.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (1.5ms)
+Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-06 20:22:11 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (18.3ms)
+  Rendered layouts/_messages.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (1.8ms)
+Completed 200 OK in 109ms (Views: 106.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-06 20:28:33 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_messages.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 123ms (Views: 121.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-08 13:44:13 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_messages.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 181ms (Views: 177.9ms | ActiveRecord: 0.0ms)
+Started GET "/control/login" for 127.0.0.1 at 2013-08-08 13:45:31 -0500
+Processing by SessionsController#new as JS
+  Rendered sessions/_form.html.erb (8.3ms)
+  Rendered sessions/new.js.erb (26.3ms)
+Completed 200 OK in 274ms (Views: 67.6ms | ActiveRecord: 42.7ms)
+Started POST "/control/sessions" for 127.0.0.1 at 2013-08-08 13:45:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "email"=>"william.betancur@gmail.com", "password"=>"[FILTERED]", "commit"=>"Ingresar"}
+  [1m[36mUser Load (168.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE (email = 'william.betancur@gmail.com') LIMIT 1[0m
+Redirected to http://localhost/control/
+Completed 302 Found in 622ms (ActiveRecord: 172.3ms)
+Started GET "/control/" for 127.0.0.1 at 2013-08-08 13:45:41 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (22.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mRole Load (18.6ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 565ms (Views: 482.1ms | ActiveRecord: 81.7ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-08 13:45:54 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.7ms)
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mRole Load (1.8ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 60.2ms | ActiveRecord: 3.6ms)
+Started GET "/control/" for 127.0.0.1 at 2013-08-08 13:45:57 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.9ms)
+  [1m[35mUser Load (6.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mRole Load (1.6ms)[0m  [1mSELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4[0m
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 57ms (Views: 48.0ms | ActiveRecord: 7.9ms)
+Connecting to database specified by database.yml
+Started GET "/control" for 127.0.0.1 at 2013-08-08 13:58:57 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (11.5ms)
+  [1m[36mUser Load (17.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (3.6ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (2.2ms)
+Completed 200 OK in 639ms (Views: 588.0ms | ActiveRecord: 47.9ms)
+Started GET "/control/admin" for 127.0.0.1 at 2013-08-08 13:59:21 -0500
+Processing by PagesController#admin as HTML
+  Rendered pages/admin.html.erb within layouts/application (17.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (1.5ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 139ms (Views: 133.7ms | ActiveRecord: 3.3ms)
+Started GET "/control/about" for 127.0.0.1 at 2013-08-08 13:59:45 -0500
+Processing by PagesController#about as JS
+  Rendered pages/_about.html.erb (2.9ms)
+  Rendered pages/about.js.erb (9.5ms)
+Completed 200 OK in 95ms (Views: 93.4ms | ActiveRecord: 0.0ms)
+Started GET "/control" for 127.0.0.1 at 2013-08-08 14:00:36 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (1.5ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 36.9ms | ActiveRecord: 3.0ms)
+Started GET "/control/" for 127.0.0.1 at 2013-08-08 14:16:32 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (4.9ms)
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  [1m[35mRole Load (1.9ms)[0m  SELECT "roles".* FROM "roles" INNER JOIN "assignments" ON "roles"."id" = "assignments"."role_id" WHERE "assignments"."user_id" = 4
+  Rendered layouts/_messages.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 3.7ms)

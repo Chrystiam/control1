@@ -1,0 +1,40 @@
+<br>
+<h3 id='order'>Nueva Ciudad</h3>
+<%= simple_form_for @city, :html => { :remote => true, :class => 'form-horizontal' } do |f| %>
+
+  <div class="responsive">
+      
+     <div class="modal-body">  
+         
+        <%= f.error_notification %>
+        <%= display_base_errors @city %>
+        
+        <div class="row">
+            <div class="span6">
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Nombre</label>
+                    <div class="controls">
+                         <%= f.input :name,
+                             :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Region</label>
+                    <div class="controls">
+                         <%= f.association :region, :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+     
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+  
+  </div>
+<% end %>

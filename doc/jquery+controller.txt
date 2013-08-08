@@ -1,0 +1,32 @@
+http://stackoverflow.com/questions/14133549/how-to-call-controller-action-in-ajax-url
+ust use an AJAX call:
+
+------------------------------------------
+
+<div id='some-container'>Loading...</div>
+
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $.get('@Url.Action("Add", "BankController")', function(viewResult) {
+            $("#some-container").html(viewResult);
+            alert(viewResult);
+        });
+    });
+</script>
+-------------------------------------------
+
+http://stackoverflow.com/questions/15894119/calling-rails-action-from-javascript
+
+http://stackoverflow.com/questions/14282318/set-a-rails-ruby-variable-using-javascript-via-ajax
+
+$.ajax({
+   url:'/some_controller/make_a_change', //Defined in your routes file
+   data:(
+     'special_id=' + $('#special_id').val() + '&' +
+     'target_area_id=' + $('#target_area_id').val()
+   )
+})
+
+
+http://stackoverflow.com/questions/13470953/rails-3-update-div-content-with-ajax-and-jquery-nested-resources
+

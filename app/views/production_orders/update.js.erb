@@ -1,0 +1,3 @@
+$('tr#production_order_<%= @production_order.id %>').replaceWith("<%= escape_javascript(render @production_order) %>")
+$.lazybox.close()
+

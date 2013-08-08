@@ -1,0 +1,3 @@
+$('tr#procedure_<%= @procedure.id %>').replaceWith("<%= escape_javascript(render @procedure) %>")
+$.lazybox.close()
+

@@ -1,0 +1,55 @@
+<%= javascript_include_tag "consume_garments.js" %>
+
+<%= simple_form_for([@garment, @consume_garment], :html => { :remote => true }) do |f| %>
+
+  <div class="responsive">
+      
+     <div class="modal-body">  
+         
+        <%= f.error_notification %>
+        <%= display_base_errors @consume_garment %>
+        
+        <div class="row">
+            <div class="span6">
+
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Descripción</label>
+                    <div class="controls">
+                         <%= f.association :input, :collection => Input.all(:order => 'name'),
+                             :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Unidad</label>
+                    <div class="controls">
+                         <%= f.association :unity, :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Cantidad Consumida</label>
+                    <div class="controls">
+                         <%= f.input :quantity_consume, :label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="inputName">Costo</label>
+                    <div class="controls">
+                         <%= f.input :cost, :label => false, :required => true,
+                             :input_html => {:class => 'span4', :readonly => "readonly" } %>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+     
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+  
+  </div>
+  
+<% end %>

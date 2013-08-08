@@ -1,0 +1,14 @@
+<tr id=<%= "preproduction_cost_#{preproduction_cost.id}" %>>
+    <td><%= link_to preproduction_cost.id, production_order_preproduction_cost_path(@production_order, preproduction_cost), :remote => true %></td>
+    <td><%= preproduction_cost.plotting %></td>
+    <td><%= preproduction_cost.perforated_paper %></td>
+    <td><%= preproduction_cost.plastic %></td>
+    <td><%= preproduction_cost.labeling %></td>
+    <td><%= preproduction_cost.printing %></td>
+    <td><%= preproduction_cost.cost %></td>
+    <td>
+       <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), production_order_preproduction_cost_path(@production_order, preproduction_cost), :remote => true %>
+       <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ),edit_production_order_preproduction_cost_path(@production_order, preproduction_cost), :remote => true %>
+       <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), production_order_preproduction_cost_path(@production_order, preproduction_cost), :confirm => 'Are you sure you want to delete this entry? This is an irreversible action.', :method => :delete, :remote => true %>
+   </td>
+</tr>

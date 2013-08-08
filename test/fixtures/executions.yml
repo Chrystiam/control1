@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fulfillment: 1.5
+  numerator: 1
+  observation: MyText
+  month: 
+  schedule: 
+  user: 
+
+two:
+  fulfillment: 1.5
+  numerator: 1
+  observation: MyText
+  month: 
+  schedule: 
+  user: 

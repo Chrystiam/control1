@@ -1,0 +1,74 @@
+<br>
+<h3 id='order'>Nuevo Producto</h3>
+<%= javascript_include_tag "productions.js" %>
+
+<div class='productions'>
+<%= simple_form_for(@production, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+      <div class="control-group">
+        
+        <div class="row">
+          <div class="span3">Prenda</div>
+        </div>
+
+        <div class="row">
+          <div class="span9">
+            <%= f.association :garment, :collection => Garment.all(:order => 'name'), :label => false, :required => true %>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="span3">Fecha Entrada</div>
+        <div class="span3">Cantidad Entrada</div>
+      </div>
+
+      <div class="row">
+      <div class="span3"><%= f.input :date_in, :label => false, :required => true, :input_html => { :class => 'datepicker' } %></div>
+      <div class="span3"><%= f.input :amount_in, :label => false, :required => true %></div>
+      </div>
+
+      <div class="row">
+        <div class="span3">Fecha Salida</div>
+        <div class="span3">Cantidad Salida</div>
+        <div id='saldo' class="span3">Saldo</div>
+      </div>
+      
+      <div class="row">
+        <div class="span3"><%= f.input :date_out, :label => false, :required => true, :input_html => { :class => 'datepicker' } %></div>
+        <div class="span3"><%= f.input :amount_out, :label => false, :required => true %></div>
+        <div id='saldo' class="span3"><%= f.input :remaining, :label => false, :required => true, :input_html => { :readonly => "readonly" } %></div>
+      </div>
+
+      <div class="row">
+        
+        <div class="span3">Tipo A</div>
+        <div class="span3">Tipo B</div>
+      </div>
+
+      <div class="row">
+        <div class="span3"><%= f.input :a_amount, :label => false, :required => true %></div>
+        <div class="span3"><%= f.input :b_amount, :label => false, :required => true, :input_html => { :readonly => "readonly" } %></div>
+        
+      </div>
+
+      <div class="row">
+          <div class="span3">Instructor</div>
+        </div>
+
+        <div class="row">
+          <div class="span9">
+            <%= f.association :user, :collection => User.all(:order => 'name'), :label => false, :required => true %>
+          </div>
+        </div>
+  </div>
+
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, :class=>'btn btn-primary' %>
+    <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+
+<% end %>
+</div>

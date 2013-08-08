@@ -1,0 +1,65 @@
+<div class='supplier'>
+    <%- model_class = Supplier -%>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h4>Proveedor <%= @supplier.name %></h4>
+             <img id='lazyimme' src="assets/logo_sena.png">
+        </div>
+
+        <div class="modal-body">
+            <p>
+              <b>Doc:</b>
+              <%= @supplier.doc.name %>
+            </p>
+
+            <p>
+              <b>Identificacion:</b>
+              <%= @supplier.identification %>
+            </p>
+
+            <p>
+              <b>Razon Social:</b>
+              <%= @supplier.social_reason %>
+            </p>
+
+            <p>
+              <b>Responsable:</b>
+              <%= @supplier.responsible %>
+            </p>
+
+            <p>
+              <b>Ocupacion:</b>
+              <%= @supplier.ocupation %>
+            </p>
+
+            <p>
+              <b>Direccion:</b>
+              <%= @supplier.adress %>
+            </p>
+
+            <p>
+              <b>Telefono:</b>
+              <%= @supplier.phone %>
+            </p>
+
+            <p>
+              <b>Celular:</b>
+              <%= @supplier.cell %>
+            </p>
+
+            <p>
+              <b>Ciudad:</b>
+              <%= @supplier.city.name %>
+            </p>
+
+        </div>
+        
+        <div id='fo' class="modal-footer">
+             <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+</div>

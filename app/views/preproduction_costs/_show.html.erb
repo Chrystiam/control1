@@ -1,0 +1,33 @@
+<%- model_class = PreproductionCost -%>
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+         onclick="$.lazybox.close()">&times;</button>
+         <h3>Costos de Preproduccion</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <dl class="dl-horizontal">
+          <dt><strong>Ploteo:</strong></dt>
+          <dd><%= @preproduction_cost.plotting %></dd>
+          <dt><strong>Papel Perforado:</strong></dt>
+          <dd><%= @preproduction_cost.perforated_paper %></dd>
+          <dt><strong>Plastico:</strong></dt>
+          <dd><%= @preproduction_cost.plastic %></dd>
+          <dt><strong>Etiquetado:</strong></dt>
+          <dd><%= @preproduction_cost.labeling %>.</dd>
+          <dt><strong>Estampado:</strong></dt>
+          <dd><%= @preproduction_cost.printing %>.</dd>
+          <dt><strong>Costo Total:</strong></dt>
+          <dd><%= @preproduction_cost.cost %>.</dd>
+        </dl>
+
+    </div>
+    
+    <div id='fo' class="modal-footer">
+         <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+ 
+ </div>

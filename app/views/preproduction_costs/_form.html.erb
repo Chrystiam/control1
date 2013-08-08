@@ -1,0 +1,72 @@
+<%= javascript_include_tag "preproduction_cost.js" %>
+
+<%= simple_form_for([@production_order, @preproduction_cost], :html => { :remote => true }) do |f| %>
+
+    
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Costo de Preproducciones</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <%= display_base_errors @preproduction_cost %>
+            <div class="row">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Ploteo</label>
+                        <div class="controls">
+                             <%= f.input :plotting, default: 1, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Papel Perforado</label>
+                        <div class="controls">
+                             <%= f.input :perforated_paper, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Plastico</label>
+                        <div class="controls">
+                             <%= f.input :plastic, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Etiquetado</label>
+                        <div class="controls">
+                             <%= f.input :labeling, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Estampado</label>
+                        <div class="controls">
+                             <%= f.input :printing, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Costo</label>
+                        <div class="controls">
+                             <%= f.input :cost, :label => false, :required => true,
+                                 :input_html => {:class => 'span4', :min => 0, :value => 0, :readonly => 'readonly' } %>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+
+    </div>
+
+<% end %>

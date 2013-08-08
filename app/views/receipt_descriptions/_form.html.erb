@@ -1,0 +1,51 @@
+<%= javascript_include_tag "receipt_descriptions.js" %>
+
+<%= simple_form_for([@receipt_header, @receipt_description], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Descripcion del Recibo</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <div class="row">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Producto</label>
+                        <div class="controls">
+                             <%= f.association :garment, :collection => Garment.all(:order => 'name'), :label => false %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Cantidad</label>
+                        <div class="controls">
+                             <%= f.input :amount, :label => false, :required => true, :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Valor Unitario</label>
+                        <div class="controls">
+                             <%= f.input :unity_value, :label => false, :required => true, :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                      <div class="control-group">
+                        <label class="control-label" for="inputName">Valor Total</label>
+                        <div class="controls">
+                             <%= f.input :total_value, :label => false, :required => true, :input_html => {:class => 'span4', :min => 0 } %>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+
+    </div>
+<% end %>   

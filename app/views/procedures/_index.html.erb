@@ -1,0 +1,41 @@
+<%- model_class = Procedure -%>
+<div class='procedures'>
+ <div class="page-header">
+   <h1>Procesos</h1>
+   <img id='lazyimm' src="assets/logo_sena.png">
+ </div>
+ <div id="busc">
+     <%= form_tag request.path, :class => "well", :method => 'get' do %>
+
+       <div class = "row">
+            <div class="span9">
+                 <div class = "row">
+                      <div class="span4">
+                           <b>Proceso:   </b> 
+                           <%= text_field_tag :name, params[:name], 
+                            :class=>"span1" %>
+                      </div>
+                      <div id='btnbus' class="span1">
+                          <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success  ' %>
+                      </div>
+                 </div>
+            </div>
+       </div>
+     <% end %>
+ </div>
+ <table class="table table-striped table-bordered table-condensed table-hover">
+   <thead>
+     <tr> 
+         
+     </tr>
+       </thead>
+         <tbody>
+            <%= render @procedures %>
+         </tbody>
+       <tfoot>
+   </tfoot>
+ </table>
+ <div id='fo' class="form-actions">
+ <%= link_to 'Nuevo Proceso', new_production_order_procedure_path(@production_order), :remote => true, :class => 'btn btn-primary' %>
+  <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+</div>

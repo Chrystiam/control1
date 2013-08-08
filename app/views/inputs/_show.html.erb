@@ -1,0 +1,33 @@
+<%- model_class = Input -%>
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+         onclick="$.lazybox.close()">&times;</button>
+         <h3>Materiales e Insumos</h3>
+    </div>
+
+    <div class="modal-body">
+
+        <dl class="dl-horizontal">
+          <dt><strong>Nombre:</strong></dt>
+          <dd><%= @input.name %></dd>
+          <dt><strong>Descripción:</strong></dt>
+          <dd><%= @input.description %></dd>
+          <dt><strong>Tipo:</strong></dt>
+          <dd><%= @input.category.name %></dd>
+          <dt><strong>Costo Unidad:</strong></dt>
+          <dd><%= @input.unit_cost %>.</dd>
+          <dt><strong>Costo Metro:</strong></dt>
+          <dd><%= @input.meter_cost %>.</dd>
+          <dt><strong>Costo Total:</strong></dt>
+          <dd><%= @input.total_cost %>.</dd>
+        </dl>
+
+    </div>
+    
+    <div id='fo' class="modal-footer">
+         <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+    </div>
+ 
+ </div>

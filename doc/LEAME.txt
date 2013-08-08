@@ -1,0 +1,21 @@
+Administracion indicadores
+
+1: creacion de vigencia anual.
+
+El administrador crea todos los registros de los indicadores mes a mes. vigencias
+
+antes de instal la gema pg hay que instalar
+
+sudo apt-get install libpq-dev
+
+sudo apt-get install imagemagick
+
+
+arrancar el nginx
+sudo /etc/init.d/nginx start
+sudo /var/www/dir/tmp/restart.txt
+
+
+java -jar [Jar file Name]
+
+

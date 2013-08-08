@@ -1,0 +1,3 @@
+$('tr#client_<%= @client.id %>').replaceWith("<%= escape_javascript(render @client) %>")
+$.lazybox.close()
+

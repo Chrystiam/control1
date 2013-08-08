@@ -1,0 +1,14 @@
+<tr id=<%= "receipt_description_#{receipt_description.id}" %>>
+    <td><%= receipt_description.amount %></td>
+    <td><%= receipt_description.garment.name %> (<%= receipt_description.garment.type.name %>)</td>
+    <td>$<%= receipt_description.unity_value %></td>
+    <td>$<%= receipt_description.total_value %></td>
+    <td>
+        <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_receipt_header_receipt_description_path(@receipt_header, receipt_description), :remote => true %>
+        <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), receipt_header_receipt_description_path(@receipt_header, receipt_description),
+                    :method => :delete, :remote => true,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
+                               :default => 'Estas Seguro?')) } %>
+        
+    </td>
+</tr>

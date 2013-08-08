@@ -1,0 +1,11 @@
+ <tr id=<%= "unity_#{unity.id}" %>>
+  <td><%= link_to unity.id, unity_path(unity), :remote => true %></td>
+  <td><%= unity.name %></td>
+  <td><%= unity.initials %></td>
+  <td>
+    <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_unity_path(unity), :remote => true %> |
+    <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), unity_path(unity),
+                :method => :delete,
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+  </td>
+</tr>

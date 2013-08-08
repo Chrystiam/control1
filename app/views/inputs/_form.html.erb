@@ -1,0 +1,76 @@
+<%= simple_form_for @input, :html => { :class => 'form-horizontal', :remote => true } do |f| %>
+    
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Materiales e Insumos</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <%= display_base_errors @input %>
+            <div class="row">
+                <div class="span6">
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Nombre</label>
+                        <div class="controls">
+                             <%= f.input :name, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Descripción</label>
+                        <div class="controls">
+                             <%= f.input :description, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Categoria</label>
+                        <div class="controls">
+                             <%= f.association :category, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Unidad</label>
+                        <div class="controls">
+                             <%= f.association :unity, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Costo Unidad</label>
+                        <div class="controls">
+                             <%= f.input :unit_cost, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Costo Metro</label>
+                        <div class="controls">
+                             <%= f.input :meter_cost, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputName">Total Costo</label>
+                        <div class="controls">
+                             <%= f.input :total_cost, :label => false, :required => true,
+                                 :input_html => {:class => 'span4' } %>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+
+    </div>
+
+<% end %>

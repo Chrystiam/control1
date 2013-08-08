@@ -1,0 +1,232 @@
+          purchase_purchase_descriptions GET    /purchases/:purchase_id/purchase_descriptions(.:format)                        purchase_descriptions#index
+                                         POST   /purchases/:purchase_id/purchase_descriptions(.:format)                        purchase_descriptions#create
+       new_purchase_purchase_description GET    /purchases/:purchase_id/purchase_descriptions/new(.:format)                    purchase_descriptions#new
+      edit_purchase_purchase_description GET    /purchases/:purchase_id/purchase_descriptions/:id/edit(.:format)               purchase_descriptions#edit
+           purchase_purchase_description GET    /purchases/:purchase_id/purchase_descriptions/:id(.:format)                    purchase_descriptions#show
+                                         PUT    /purchases/:purchase_id/purchase_descriptions/:id(.:format)                    purchase_descriptions#update
+                                         DELETE /purchases/:purchase_id/purchase_descriptions/:id(.:format)                    purchase_descriptions#destroy
+                               purchases GET    /purchases(.:format)                                                           purchases#index
+                                         POST   /purchases(.:format)                                                           purchases#create
+                            new_purchase GET    /purchases/new(.:format)                                                       purchases#new
+                           edit_purchase GET    /purchases/:id/edit(.:format)                                                  purchases#edit
+                                purchase GET    /purchases/:id(.:format)                                                       purchases#show
+                                         PUT    /purchases/:id(.:format)                                                       purchases#update
+                                         DELETE /purchases/:id(.:format)                                                       purchases#destroy
+                               suppliers GET    /suppliers(.:format)                                                           suppliers#index
+                                         POST   /suppliers(.:format)                                                           suppliers#create
+                            new_supplier GET    /suppliers/new(.:format)                                                       suppliers#new
+                           edit_supplier GET    /suppliers/:id/edit(.:format)                                                  suppliers#edit
+                                supplier GET    /suppliers/:id(.:format)                                                       suppliers#show
+                                         PUT    /suppliers/:id(.:format)                                                       suppliers#update
+                                         DELETE /suppliers/:id(.:format)                                                       suppliers#destroy
+                               ingresolo GET    /ingresolo(.:format)                                                           sessions#ingresolo
+                                   ayuda GET    /ayuda(.:format)                                                               ayuda#index
+                                  video1 GET    /video1(.:format)                                                              ayuda#video1
+  autocomplete_city_name_receipt_headers GET    /receipt_headers/autocomplete_city_name(.:format)                              receipt_headers#autocomplete_city_name
+     receipt_header_receipt_descriptions GET    /receipt_headers/:receipt_header_id/receipt_descriptions(.:format)             receipt_descriptions#index
+                                         POST   /receipt_headers/:receipt_header_id/receipt_descriptions(.:format)             receipt_descriptions#create
+  new_receipt_header_receipt_description GET    /receipt_headers/:receipt_header_id/receipt_descriptions/new(.:format)         receipt_descriptions#new
+ edit_receipt_header_receipt_description GET    /receipt_headers/:receipt_header_id/receipt_descriptions/:id/edit(.:format)    receipt_descriptions#edit
+      receipt_header_receipt_description GET    /receipt_headers/:receipt_header_id/receipt_descriptions/:id(.:format)         receipt_descriptions#show
+                                         PUT    /receipt_headers/:receipt_header_id/receipt_descriptions/:id(.:format)         receipt_descriptions#update
+                                         DELETE /receipt_headers/:receipt_header_id/receipt_descriptions/:id(.:format)         receipt_descriptions#destroy
+                         receipt_headers GET    /receipt_headers(.:format)                                                     receipt_headers#index
+                                         POST   /receipt_headers(.:format)                                                     receipt_headers#create
+                      new_receipt_header GET    /receipt_headers/new(.:format)                                                 receipt_headers#new
+                     edit_receipt_header GET    /receipt_headers/:id/edit(.:format)                                            receipt_headers#edit
+                          receipt_header GET    /receipt_headers/:id(.:format)                                                 receipt_headers#show
+                                         PUT    /receipt_headers/:id(.:format)                                                 receipt_headers#update
+                                         DELETE /receipt_headers/:id(.:format)                                                 receipt_headers#destroy
+               receipt_descriptions_calc GET    /receipt_descriptions/calc(.:format)                                           receipt_descriptions#calc
+                              conditions GET    /conditions(.:format)                                                          conditions#index
+                                         POST   /conditions(.:format)                                                          conditions#create
+                           new_condition GET    /conditions/new(.:format)                                                      conditions#new
+                          edit_condition GET    /conditions/:id/edit(.:format)                                                 conditions#edit
+                               condition GET    /conditions/:id(.:format)                                                      conditions#show
+                                         PUT    /conditions/:id(.:format)                                                      conditions#update
+                                         DELETE /conditions/:id(.:format)                                                      conditions#destroy
+                                  states GET    /states(.:format)                                                              states#index
+                                         POST   /states(.:format)                                                              states#create
+                               new_state GET    /states/new(.:format)                                                          states#new
+                              edit_state GET    /states/:id/edit(.:format)                                                     states#edit
+                                   state GET    /states/:id(.:format)                                                          states#show
+                                         PUT    /states/:id(.:format)                                                          states#update
+                                         DELETE /states/:id(.:format)                                                          states#destroy
+             production_order_procedures GET    /production_orders/:production_order_id/procedures(.:format)                   procedures#index
+                                         POST   /production_orders/:production_order_id/procedures(.:format)                   procedures#create
+          new_production_order_procedure GET    /production_orders/:production_order_id/procedures/new(.:format)               procedures#new
+         edit_production_order_procedure GET    /production_orders/:production_order_id/procedures/:id/edit(.:format)          procedures#edit
+              production_order_procedure GET    /production_orders/:production_order_id/procedures/:id(.:format)               procedures#show
+                                         PUT    /production_orders/:production_order_id/procedures/:id(.:format)               procedures#update
+                                         DELETE /production_orders/:production_order_id/procedures/:id(.:format)               procedures#destroy
+    production_order_preproduction_costs GET    /production_orders/:production_order_id/preproduction_costs(.:format)          preproduction_costs#index
+                                         POST   /production_orders/:production_order_id/preproduction_costs(.:format)          preproduction_costs#create
+ new_production_order_preproduction_cost GET    /production_orders/:production_order_id/preproduction_costs/new(.:format)      preproduction_costs#new
+edit_production_order_preproduction_cost GET    /production_orders/:production_order_id/preproduction_costs/:id/edit(.:format) preproduction_costs#edit
+     production_order_preproduction_cost GET    /production_orders/:production_order_id/preproduction_costs/:id(.:format)      preproduction_costs#show
+                                         PUT    /production_orders/:production_order_id/preproduction_costs/:id(.:format)      preproduction_costs#update
+                                         DELETE /production_orders/:production_order_id/preproduction_costs/:id(.:format)      preproduction_costs#destroy
+                       production_orders GET    /production_orders(.:format)                                                   production_orders#index
+                                         POST   /production_orders(.:format)                                                   production_orders#create
+                    new_production_order GET    /production_orders/new(.:format)                                               production_orders#new
+                   edit_production_order GET    /production_orders/:id/edit(.:format)                                          production_orders#edit
+                        production_order GET    /production_orders/:id(.:format)                                               production_orders#show
+                                         PUT    /production_orders/:id(.:format)                                               production_orders#update
+                                         DELETE /production_orders/:id(.:format)                                               production_orders#destroy
+                              statistics GET    /statistics(.:format)                                                          statistics#index
+                       prints_statistics GET    /statistics/prints(.:format)                                                   statistics#prints
+                   assemblies_statistics GET    /statistics/assemblies(.:format)                                               statistics#assemblies
+                     outlines_statistics GET    /statistics/outlines(.:format)                                                 statistics#outlines
+                 embroideries_statistics GET    /statistics/embroideries(.:format)                                             statistics#embroideries
+                         cuts_statistics GET    /statistics/cuts(.:format)                                                     statistics#cuts
+                       labels_statistics GET    /statistics/labels(.:format)                                                   statistics#labels
+                                         GET    /statistics(.:format)                                                          statistics#index
+                                         POST   /statistics(.:format)                                                          statistics#create
+                           new_statistic GET    /statistics/new(.:format)                                                      statistics#new
+                          edit_statistic GET    /statistics/:id/edit(.:format)                                                 statistics#edit
+                               statistic GET    /statistics/:id(.:format)                                                      statistics#show
+                                         PUT    /statistics/:id(.:format)                                                      statistics#update
+                                         DELETE /statistics/:id(.:format)                                                      statistics#destroy
+                               donations GET    /donations(.:format)                                                           donations#index
+                                         POST   /donations(.:format)                                                           donations#create
+                            new_donation GET    /donations/new(.:format)                                                       donations#new
+                           edit_donation GET    /donations/:id/edit(.:format)                                                  donations#edit
+                                donation GET    /donations/:id(.:format)                                                       donations#show
+                                         PUT    /donations/:id(.:format)                                                       donations#update
+                                         DELETE /donations/:id(.:format)                                                       donations#destroy
+                                  inputs GET    /inputs(.:format)                                                              inputs#index
+                                         POST   /inputs(.:format)                                                              inputs#create
+                               new_input GET    /inputs/new(.:format)                                                          inputs#new
+                              edit_input GET    /inputs/:id/edit(.:format)                                                     inputs#edit
+                                   input GET    /inputs/:id(.:format)                                                          inputs#show
+                                         PUT    /inputs/:id(.:format)                                                          inputs#update
+                                         DELETE /inputs/:id(.:format)                                                          inputs#destroy
+                              categories GET    /categories(.:format)                                                          categories#index
+                                         POST   /categories(.:format)                                                          categories#create
+                            new_category GET    /categories/new(.:format)                                                      categories#new
+                           edit_category GET    /categories/:id/edit(.:format)                                                 categories#edit
+                                category GET    /categories/:id(.:format)                                                      categories#show
+                                         PUT    /categories/:id(.:format)                                                      categories#update
+                                         DELETE /categories/:id(.:format)                                                      categories#destroy
+                                 unities GET    /unities(.:format)                                                             unities#index
+                                         POST   /unities(.:format)                                                             unities#create
+                               new_unity GET    /unities/new(.:format)                                                         unities#new
+                              edit_unity GET    /unities/:id/edit(.:format)                                                    unities#edit
+                                   unity GET    /unities/:id(.:format)                                                         unities#show
+                                         PUT    /unities/:id(.:format)                                                         unities#update
+                                         DELETE /unities/:id(.:format)                                                         unities#destroy
+                garment_consume_garments GET    /garments/:garment_id/consume_garments(.:format)                               consume_garments#index
+                                         POST   /garments/:garment_id/consume_garments(.:format)                               consume_garments#create
+             new_garment_consume_garment GET    /garments/:garment_id/consume_garments/new(.:format)                           consume_garments#new
+            edit_garment_consume_garment GET    /garments/:garment_id/consume_garments/:id/edit(.:format)                      consume_garments#edit
+                 garment_consume_garment GET    /garments/:garment_id/consume_garments/:id(.:format)                           consume_garments#show
+                                         PUT    /garments/:garment_id/consume_garments/:id(.:format)                           consume_garments#update
+                                         DELETE /garments/:garment_id/consume_garments/:id(.:format)                           consume_garments#destroy
+                                garments GET    /garments(.:format)                                                            garments#index
+                                         POST   /garments(.:format)                                                            garments#create
+                             new_garment GET    /garments/new(.:format)                                                        garments#new
+                            edit_garment GET    /garments/:id/edit(.:format)                                                   garments#edit
+                                 garment GET    /garments/:id(.:format)                                                        garments#show
+                                         PUT    /garments/:id(.:format)                                                        garments#update
+                                         DELETE /garments/:id(.:format)                                                        garments#destroy
+               consume_garments_cal_cost GET    /consume_garments/cal_cost(.:format)                                           consume_garments#cal_cost
+                                   types GET    /types(.:format)                                                               types#index
+                                         POST   /types(.:format)                                                               types#create
+                                new_type GET    /types/new(.:format)                                                           types#new
+                               edit_type GET    /types/:id/edit(.:format)                                                      types#edit
+                                    type GET    /types/:id(.:format)                                                           types#show
+                                         PUT    /types/:id(.:format)                                                           types#update
+                                         DELETE /types/:id(.:format)                                                           types#destroy
+          autocomplete_city_name_clients GET    /clients/autocomplete_city_name(.:format)                                      clients#autocomplete_city_name
+                                 clients GET    /clients(.:format)                                                             clients#index
+                                         POST   /clients(.:format)                                                             clients#create
+                              new_client GET    /clients/new(.:format)                                                         clients#new
+                             edit_client GET    /clients/:id/edit(.:format)                                                    clients#edit
+                                  client GET    /clients/:id(.:format)                                                         clients#show
+                                         PUT    /clients/:id(.:format)                                                         clients#update
+                                         DELETE /clients/:id(.:format)                                                         clients#destroy
+                                    docs GET    /docs(.:format)                                                                docs#index
+                                         POST   /docs(.:format)                                                                docs#create
+                                 new_doc GET    /docs/new(.:format)                                                            docs#new
+                                edit_doc GET    /docs/:id/edit(.:format)                                                       docs#edit
+                                     doc GET    /docs/:id(.:format)                                                            docs#show
+                                         PUT    /docs/:id(.:format)                                                            docs#update
+                                         DELETE /docs/:id(.:format)                                                            docs#destroy
+                                  cities GET    /cities(.:format)                                                              cities#index
+                                         POST   /cities(.:format)                                                              cities#create
+                                new_city GET    /cities/new(.:format)                                                          cities#new
+                               edit_city GET    /cities/:id/edit(.:format)                                                     cities#edit
+                                    city GET    /cities/:id(.:format)                                                          cities#show
+                                         PUT    /cities/:id(.:format)                                                          cities#update
+                                         DELETE /cities/:id(.:format)                                                          cities#destroy
+                                 regions GET    /regions(.:format)                                                             regions#index
+                                         POST   /regions(.:format)                                                             regions#create
+                              new_region GET    /regions/new(.:format)                                                         regions#new
+                             edit_region GET    /regions/:id/edit(.:format)                                                    regions#edit
+                                  region GET    /regions/:id(.:format)                                                         regions#show
+                                         PUT    /regions/:id(.:format)                                                         regions#update
+                                         DELETE /regions/:id(.:format)                                                         regions#destroy
+                               countries GET    /countries(.:format)                                                           countries#index
+                                         POST   /countries(.:format)                                                           countries#create
+                             new_country GET    /countries/new(.:format)                                                       countries#new
+                            edit_country GET    /countries/:id/edit(.:format)                                                  countries#edit
+                                 country GET    /countries/:id(.:format)                                                       countries#show
+                                         PUT    /countries/:id(.:format)                                                       countries#update
+                                         DELETE /countries/:id(.:format)                                                       countries#destroy
+                                activate GET    /activate(.:format)                                                            activations#create
+                                    root        /                                                                              pages#home
+                               inventory GET    /inventory(.:format)                                                           pages#inventory
+                                  admin2 GET    /admin2(.:format)                                                              pages#admin2
+                                   admin GET    /admin(.:format)                                                               pages#admin
+                                  admin3 GET    /admin3(.:format)                                                              pages#admin3
+                                   about GET    /about(.:format)                                                               pages#about
+                           activate_user GET    /users/:id/activate(.:format)                                                  users#activate
+          autocomplete_center_name_users GET    /users/autocomplete_center_name(.:format)                                      users#autocomplete_center_name
+                                   users GET    /users(.:format)                                                               users#index
+                                         POST   /users(.:format)                                                               users#create
+                                new_user GET    /users/new(.:format)                                                           users#new
+                               edit_user GET    /users/:id/edit(.:format)                                                      users#edit
+                                    user GET    /users/:id(.:format)                                                           users#show
+                                         PUT    /users/:id(.:format)                                                           users#update
+                                         DELETE /users/:id(.:format)                                                           users#destroy
+                                  logout GET    /logout(.:format)                                                              sessions#destroy
+                                   login GET    /login(.:format)                                                               sessions#new
+                                  signup GET    /signup(.:format)                                                              users#new
+                                sessions POST   /sessions(.:format)                                                            sessions#create
+                             new_session GET    /sessions/new(.:format)                                                        sessions#new
+                                 session DELETE /sessions/:id(.:format)                                                        sessions#destroy
+                         password_resets POST   /password_resets(.:format)                                                     password_resets#create
+                     new_password_resets GET    /password_resets/new(.:format)                                                 password_resets#new
+                    edit_password_resets GET    /password_resets/edit(.:format)                                                password_resets#edit
+                                         GET    /password_resets(.:format)                                                     password_resets#show
+                                         PUT    /password_resets(.:format)                                                     password_resets#update
+                                         DELETE /password_resets(.:format)                                                     password_resets#destroy
+                                 centers GET    /centers(.:format)                                                             centers#index
+                                         POST   /centers(.:format)                                                             centers#create
+                              new_center GET    /centers/new(.:format)                                                         centers#new
+                             edit_center GET    /centers/:id/edit(.:format)                                                    centers#edit
+                                  center GET    /centers/:id(.:format)                                                         centers#show
+                                         PUT    /centers/:id(.:format)                                                         centers#update
+                                         DELETE /centers/:id(.:format)                                                         centers#destroy
+                               regionals GET    /regionals(.:format)                                                           regionals#index
+                                         POST   /regionals(.:format)                                                           regionals#create
+                            new_regional GET    /regionals/new(.:format)                                                       regionals#new
+                           edit_regional GET    /regionals/:id/edit(.:format)                                                  regionals#edit
+                                regional GET    /regionals/:id(.:format)                                                       regionals#show
+                                         PUT    /regionals/:id(.:format)                                                       regionals#update
+                                         DELETE /regionals/:id(.:format)                                                       regionals#destroy
+                             occupations GET    /occupations(.:format)                                                         occupations#index
+                                         POST   /occupations(.:format)                                                         occupations#create
+                          new_occupation GET    /occupations/new(.:format)                                                     occupations#new
+                         edit_occupation GET    /occupations/:id/edit(.:format)                                                occupations#edit
+                              occupation GET    /occupations/:id(.:format)                                                     occupations#show
+                                         PUT    /occupations/:id(.:format)                                                     occupations#update
+                                         DELETE /occupations/:id(.:format)                                                     occupations#destroy
+                        bars_productions GET    /productions/bars(.:format)                                                    productions#bars
+                             productions GET    /productions(.:format)                                                         productions#index
+                                         POST   /productions(.:format)                                                         productions#create
+                          new_production GET    /productions/new(.:format)                                                     productions#new
+                         edit_production GET    /productions/:id/edit(.:format)                                                productions#edit
+                              production GET    /productions/:id(.:format)                                                     productions#show
+                                         PUT    /productions/:id(.:format)                                                     productions#update
+                                         DELETE /productions/:id(.:format)                                                     productions#destroy

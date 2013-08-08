@@ -1,0 +1,59 @@
+<div class='productions'>
+  <div class="page-header">
+    <h3 id='texto'>Producciones</h3>
+  </div>
+  <div id="buscar">
+      <%= form_tag request.path, :class => "well", :method => 'get' do %>
+
+        <div class = "row">
+             <div class="span9">
+                  <div class = "row">
+                       <div class="span4">
+                            <b>Produccion: </b> 
+                            <%= text_field_tag :name, params[:name], 
+                             :class=>"span3" %>
+                       </div>
+                       <div class="span1">
+                           <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success' %>
+                       </div>
+                  </div>
+             </div>
+        </div>
+
+      <% end %>
+  </div>
+  <table class="table table-striped table-bordered table-condensed table-hover">
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th>Prenda</th>
+          <th>Fecha Entrada</th>
+          <th>Cantidad Entrada</th>
+          <th>Fecha Salida</th>
+          <th>Cantidad Salida</th>
+          <th>Instructor</th>
+
+          <th></th> 
+      </tr> 
+    </thead>
+    <tbody>
+       <%= render @productions %>
+    </tbody>
+    <tfoot>
+      <tr>
+        
+      </tr>
+    </tfoot>
+  </table>
+  <%= link_to 'Nueva Produccion', new_production_path, :remote => true, :class => 'btn btn-primary' %> 
+  <%= link_to 'Ejecutar', bars_productions_path, :remote => true, :class => 'btn btn-success' %>
+</div>
+
+<div id='ocupa' class="pagination">
+   <ul>
+      <%= will_paginate(@productions, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+   </ul>
+   <p id='ocupa' class="pull-right">Total Producciones : <%= @productions.count %></p>
+</div>

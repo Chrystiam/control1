@@ -1,0 +1,14 @@
+<ul class="nav">
+
+  <% if current_user %> 
+
+      <% if  can? :update, pages_admin_path %>
+           <li><%= link_to "Admin", admin_path %></li>
+      <% end %>
+
+      <li><%= link_to('Clientes', clients_path) %></li>
+      <li><%= link_to "Salir", :logout %></li>
+   <% else %> 
+      <li id='ingresar'><%= link_to "Ingresar", :login %></li>
+   <% end %> 
+</ul>

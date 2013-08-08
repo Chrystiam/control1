@@ -1,0 +1,30 @@
+<%- model_class = PreproductionCost -%>
+
+<h3>Costos De Preproduccion </h3>
+<br>
+<div id="buscar">
+
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ploteo</th>
+      <th>Papel perforado</th>
+      <th>Plastico</th>
+      <th>Etiquetado</th>
+      <th>Estampado</th>
+      <th>Costo Total</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @preproduction_costs %>
+  </tbody>
+</table>
+ <div id='fo' class="modal-footer">
+<%= link_to 'Nuevo', new_production_order_preproduction_cost_path(@production_order), :remote => true, :class => 'btn btn-primary' %>
+  <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+</div>
+

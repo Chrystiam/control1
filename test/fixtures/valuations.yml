@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  good_min: 1.5
+  good_max: 1.5
+  level1: MyString
+  vuln_min: 1.5
+  vuln_max: 1.5
+  level2: MyString
+  low_min: 1.5
+  low_max: 1.5
+  level3: MyString
+
+two:
+  good_min: 1.5
+  good_max: 1.5
+  level1: MyString
+  vuln_min: 1.5
+  vuln_max: 1.5
+  level2: MyString
+  low_min: 1.5
+  low_max: 1.5
+  level3: MyString

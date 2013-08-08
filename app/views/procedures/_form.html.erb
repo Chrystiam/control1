@@ -1,0 +1,109 @@
+<%= javascript_include_tag "procedures.js" %>
+
+<%= simple_form_for([@production_order, @procedure], :html => { :remote => true }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <table class="table table-striped table-bordered table-condensed">
+            <tr>
+                <td>
+                  <th>Fecha Entrega</th>
+                  <th>Fecha Real</th>
+                  <th>Fecha Final</th>
+                  <th>Encargado</th>
+                  <th>Unidades</th>
+                </td> 
+            </tr>
+            <tr>
+              <th><strong>Bordado:</strong></th>
+              <td><%= f.input :embroidery_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :embroidery_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :embroidery_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :embroidery_attendant, :label => false %></td>
+              <td><%= f.input :embroidery_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Estampado:</strong></th>
+              <td><%= f.input :print_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :print_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :print_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :print_attendant, :label => false %></td>
+              <td><%= f.input :print_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Corte:</strong></th>
+              <td><%= f.input :cutting_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :cutting_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :cutting_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :cutting_attendant, :label => false %></td>
+              <td><%= f.input :cutting_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Trazo:</strong></th>
+              <td><%= f.input :outline_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :outline_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :outline_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :outline_attendant, :label => false %></td>
+              <td><%= f.input :outline_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Ensamblado:</strong></th>
+              <td><%= f.input :assembly_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :assembly_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :assembly_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :assembly_attendant, :label => false %></td>
+              <td><%= f.input :assembly_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Lavado:</strong></th>
+              <td><%= f.input :washing_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :washing_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :washing_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :washing_attendant, :label => false %></td>
+              <td><%= f.input :washing_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Tintoreria:</strong></th>
+              <td><%= f.input :tinte_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :tinte_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :tinte_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :tinte_attendant, :label => false %></td>
+              <td><%= f.input :tinte_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Etiquetado:</strong></th>
+              <td><%= f.input :labeled_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :labeled_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :labeled_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :labeled_attendant, :label => false %></td>
+              <td><%= f.input :labeled_amount, :label => false %></td>
+            </tr>
+
+            <tr>
+              <th><strong>Bodega:</strong></th>
+              <td><%= f.input :stock_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :stock_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :stock_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :stock_attendant, :label => false %></td>
+              <td><%= f.input :stock_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Almacen:</strong></th>
+              <td><%= f.input :store_delivery, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :store_real, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :store_end, :label => false, :input_html => {:class => 'datepicker' } %></td>
+              <td><%= f.input :store_attendant, :label => false %></td>
+              <td><%= f.input :store_amount, :label => false %></td>
+            </tr>
+            <tr>
+              <th><strong>Estado:</strong></th>
+              <td><%= f.association :condition, :collection => Condition.all(:order => 'name'), :label => false %></td>
+            </tr>
+          </table>
+  </div>
+
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, :class='btn btn-primary' %>
+    <%= link_to 'Cerrar', production_order_procedures_path(@production_order), :remote => true, :class=>'btn btn-inverse' %>
+  </div>
+<% end %>

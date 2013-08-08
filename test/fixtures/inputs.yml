@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  category: 
+  unit_cost: 1.5
+  meter_cost: 1.5
+  total_cost: 1.5
+  unity: 
+
+two:
+  name: MyString
+  description: MyString
+  category: 
+  unit_cost: 1.5
+  meter_cost: 1.5
+  total_cost: 1.5
+  unity: 

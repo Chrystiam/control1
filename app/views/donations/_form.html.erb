@@ -1,0 +1,73 @@
+ <script type="text/javascript">$(function() {
+ $(".datepicker").datepicker();
+});</script>
+
+<%= simple_form_for(@donation, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+  <%= display_base_errors @donation %>
+
+  <div class="control-group">
+    <label class="control-label" for="inputName">Responsable</label>
+      <div class="controls">
+        <%= f.association :user, :collection => User.all(:order => 'name'),:label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+      </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputName">Prenda</label>
+      <div class="controls">
+        <%= f.association :garment, :collection => Garment.all(:order => 'name'),:label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+      </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputName">Cantidad</label>
+    <div class="controls">
+        <%= f.input :amount, :label => false, :required => true,
+                    :input_html => {:class => 'span4' } %>
+     </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputName">Descripcion</label>
+    <div class="controls">
+        <%= f.input :description, :label => false, :required => true,
+                    :input_html => {:class => 'span4' } %>
+     </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputName">Fecha</label>
+    <div class="controls">
+        <%= f.input :date, :label => false, :required => true,
+                    :input_html => { :class => 'span4 datepicker' } %>
+     </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="inputName">Justificacion</label>
+    <div class="controls">
+        <%= f.input :justification, :label => false, :required => true,
+                    :input_html => { :rows => '10', :class => 'span4' } %>
+     </div>
+  </div>
+  
+  <div class="control-group">
+    <label class="control-label" for="inputName">Recibe</label>
+    <div class="controls">
+        <%= f.input :receiver, :collection => User.all(:order => 'name'),:label => false, :required => true,
+                             :input_html => {:class => 'span4' } %>
+     </div>
+  </div>
+
+  
+  <div id='fo' class="form-actions">
+    <%= f.submit "guardar", :class => 'btn btn-primary' %>
+    <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+  </div>
+<% end %>
+
+

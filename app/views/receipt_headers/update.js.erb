@@ -1,0 +1,2 @@
+$('tr#receipt_header_<%= @receipt_header.id %>').replaceWith("<%= escape_javascript(render @receipt_header) %>")
+$.lazybox.close()

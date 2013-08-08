@@ -1,0 +1,71 @@
+<%- model_class = Client -%>
+
+<div class="page-header">
+   <h3 id='text'>Clientes</h3>
+</div>
+
+<div id="buscarr">
+    <%= form_tag request.path, :class => "well", :method => 'get' do %> 
+
+      <div class = "row">
+           <div class="span9">
+                <div class = "row">
+                     <div class="span5">
+                          <b>Razón Social</b>
+                          <%= text_field_tag :name, params[:name], 
+                           :class=>"span4" %>
+                     </div>
+                     <div class="span3">
+                          <b>Identificación</b> 
+                          <%= text_field_tag :identificacion, params[:identificacion], 
+                           :class=>"span2" %>
+                     </div>
+                     <div class="span1">
+                         <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-primary' %>
+                     </div>
+                      <%= hidden_field_tag :ind, "1" %>
+                </div>
+           </div>
+      </div>
+
+    <% end %>
+</div>
+
+<table class="table table-hover table-striped  table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tipo Doc</td>
+      <th>Iidentificación</th>
+      <th>Razón Social</th>
+      <th>Responsable</th>
+      <th>Teléfono</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render @clients %>
+  </tbody>
+</table>
+<div id='buton'>
+    <p class="pull-left">
+       <%= link_to "Agregar Nuevo", new_client_path, :class => 'btn btn-primary', 
+           :remote => true %>
+    </p>
+</div>
+   <div id='pagination' class="pagination ">
+    <%= will_paginate(@clients, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                 :previous_label => '&laquo; Anterior', 
+                                 :next_label => 'Siguiente &raquo;') %>
+    <p id='total' class="pull-right">Total Clientes : <%= @clients.count %></p>
+</div>
+
+
+
+ 
+
+
+
+
+
+

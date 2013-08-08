@@ -1,0 +1,13 @@
+<tr id=<%= "purchase_#{purchase.id}" %>>
+    <td><%= purchase.id %></td>
+    <td><%= purchase.supplier.name %></td>
+    <td><%= purchase.date %></td>
+    <td>
+    <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), purchase, :remote => true %> |
+    <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_purchase_path(purchase), :remote => true %> |
+    <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), purchase, 
+        :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true %> |
+    <%= link_to image_tag('description.png', :width=>'40', :title=>'Descripcion' ) , purchase_purchase_descriptions_path(purchase), :remote => true %>
+  </td>
+</tr>

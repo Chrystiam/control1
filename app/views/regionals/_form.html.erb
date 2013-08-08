@@ -1,0 +1,36 @@
+<br>
+<h3 id='order'>Nueva Reional</h3>
+<%= simple_form_for(@regional, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+  <%= f.error_notification %>
+
+    <div class="control-group">
+         <label class="control-label" for="inputName">Nombre</label>
+         <div class="controls">
+              <%= f.input :name, :label => false %>
+         </div>
+    </div>
+    <div class="control-group">
+         <label class="control-label" for="inputDirector">Director</label>
+         <div class="controls">
+              <%= f.input :director, :label => false %>
+         </div>
+    </div>
+    <div class="control-group">
+         <label class="control-label" for="inputPhone">Teléfono</label>
+         <div class="controls">
+              <%= f.input :phone, :label => false %>
+         </div>
+    </div>
+    <div class="control-group">
+         <label class="control-label" for="inputIp">Ip</label>
+         <div class="controls">
+              <%= f.input :ip, :label => false %>
+         </div>
+    </div>
+
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, "Guardar", :class=>'btn btn-primary' %>
+  </div>
+
+<% end %>

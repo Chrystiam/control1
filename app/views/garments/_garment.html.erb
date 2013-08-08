@@ -1,0 +1,15 @@
+<tr id=<%= "garment_#{garment.id}" %>>
+    <td><%= link_to garment.id, garment_path(garment), :remote => true %></td>
+    <td><%= garment.name %></td>
+    <td><%= garment.reference %></td> 
+    <td>
+        <%= link_to image_tag('ver.png', :width=>'30', :title=>'Mostrar' ), garment_path(garment), :remote => true %>
+        <%= link_to image_tag('edit.png', :width=>'30', :title=>'Editar' ), edit_garment_path(garment), :remote => true %>
+        <%= link_to image_tag('costos.png', :width=>'30', :title=>'Costos' ), garment_consume_garments_path(garment),
+            :remote => true %>
+        <%= link_to image_tag('destroy.png', :width=>'30', :title=>'Eliminar' ), garment_path(garment),
+                    :method => :delete,
+                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
+                               :default => 'Are you sure?')) } %>
+    </td>
+</tr>

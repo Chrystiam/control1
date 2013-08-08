@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  programing_date: MyString
+  cliente_id: 1
+  op: 1
+  garment_id: 1
+  programed_amount: 1
+
+two:
+  programing_date: MyString
+  cliente_id: 1
+  op: 1
+  garment_id: 1
+  programed_amount: 1

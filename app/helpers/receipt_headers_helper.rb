@@ -1,0 +1,2 @@
+module ReceiptHeadersHelper
+end

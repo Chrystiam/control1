@@ -1,0 +1,14 @@
+<div class='statistics'>
+
+	<h4>Resumen de unidades Bordadas por Mes</h4>
+    <hr>
+
+	<%= image_tag Gchart.pie_3d(:data => [@data.keys, @data.values],                 
+
+								:bar_colors => 'FF0000',
+								:size => '400x200',
+								:legend => leyenda,
+								:axis_with_labels => 'x,y',
+								:background => '00CC77') %>
+
+</div>	 

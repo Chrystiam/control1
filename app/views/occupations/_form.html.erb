@@ -1,0 +1,15 @@
+<div class="page-header">
+     <h3>Nueva Ocupación</h3>
+</div>
+
+<%= simple_form_for(@occupation, :remote => true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, :label => "Ocupación", :input_html => {:class => 'span5'} %>
+  </div>
+
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, "Guardar", :class=>'btn btn-primary' %>
+  </div>
+<% end %>

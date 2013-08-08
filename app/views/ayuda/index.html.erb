@@ -1,0 +1,46 @@
+<div id='admin' class="page-header">
+  <h3>Soporte del Software</h3>
+</div>
+
+<div id='tab' class="well">
+
+    <table id='tab'  class="table table-striped">
+      <thead>
+        <tr>
+          <th>Modulos</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+
+      <tbody>
+         <tr>
+             <td><%= link_to "Usuarios", video1_path, :remote => true %></td>
+             <td>Usuarios: Video 1 </td>
+         </tr>
+         <tr>
+             <td><%= link_to "Regionales", regionals_path %></td>
+             <td>Regionales: Directorios de las regionales del SENA</td>
+         </tr>
+         <tr>
+             <td><img src="assets/trabajo.png", width='25'><%= link_to "Ocupaciones", occupations_path %></td>
+             <td>Ocupaciones</td>
+         </tr>
+         <tr>
+             <td><img src="assets/centro.png", width='25'><%= link_to "Centros", centers_path %></td>
+             <td>Centros</td>
+         </tr>
+         <tr>
+             <td><img src="assets/identifig.png", width='25'><%= link_to "Tipos Documentos", docs_path %></td>
+             <td>Tipos Documentos</td>
+         </tr>
+         <tr>
+             <td><img src="assets/paises.png", width='25'><%= link_to "Paises", countries_path %></td>
+             <td>Paises</td>
+         </tr>
+      </tbody>
+
+    </table>
+    <div id='img'>
+        <%= link_to image_tag('next.png', :title=>'Siguiente', :width=>'30'),admin2_path  %>
+    </div>
+</div>

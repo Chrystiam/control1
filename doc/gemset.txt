@@ -1,0 +1,13 @@
+~/.rvm/scripts/rvm
+
+source ~/.profile
+rvm use 1.9.3
+rvm gemset use rails3213
+
+
+# rails 4
+rvm gemset create rails40
+rvm use ruby-1.9.3-p286@rails40
+
+sudo ln -s /Users/william]/.rvm /usr/local/rvm
+

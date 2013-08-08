@@ -1,0 +1,3 @@
+$('tr#region_<%= @region.id %>').replaceWith("<%= escape_javascript(render @region) %>")
+$.lazybox.close()
+

@@ -1,0 +1,39 @@
+<div id='admin' class="page-header">
+ <h3>Administración de Tablas Maestras</h3>
+</div>
+<br>
+<div id='tab' class="well">
+
+   <table  class="table table-striped">
+     <thead>
+       <tr>
+         <th>Maestra</th>
+         <th>Descripción</th>
+       </tr>
+     </thead>
+
+     <tbody>
+      <tr>
+             <td><img src="assets/insumos.png", width='25'><%= link_to "Categoria de Insumos", categories_path %></td>
+             <td>Categoria de Insumos</td>
+         </tr>
+      <tr>
+             <td><img src="assets/insu.jpg", width='25'><%= link_to "Materiales e Insumos", inputs_path %></td>
+             <td>Materiales e Insumos</td>
+         </tr>
+        <tr>
+            <td><img src="assets/regalo.png", width='25'><%= link_to "Donaciones", donations_path %></td>
+            <td>Donaciones</td>
+        </tr>
+
+        <tr>
+            <td><img src="assets/produc.png", width='25'><%= link_to "Produccion", productions_path %></td>
+            <td>Producciones</td>
+        </tr>
+        
+     </tbody>
+   </table>
+   <div id='imge'>
+     <%= link_to image_tag('back.png', :title=>'Atras', :width=>'30'),admin2_path%>
+   </div>
+</div>

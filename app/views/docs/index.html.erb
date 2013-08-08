@@ -1,0 +1,28 @@
+<%- model_class = Doc -%>
+<div class="page-header">
+ <h3 id='order'>Documentos</h3>
+</div>
+<br>
+ <table class="table table-striped">
+ <thead>
+   <tr>
+     <th>Id</th>
+     <th>Nombre</th>
+     <th></th>
+   </tr>
+ </thead>
+ <tbody>
+     <%=render @docs%>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+<%= link_to 'Nuevo Documento', new_doc_path, :remote => true, :class => 'btn btn-primary' %>
+
+  <div id='ocupa' class="pagination">
+   <%= will_paginate(@docs, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+                                
+   <p id='total' class="pull-right"> Total Documentos : <%= @docs.count %> </p>
+</div>

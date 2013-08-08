@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  purchase_id: 1
+  input_id: 1
+  amount: 1
+  total_value: 1.5
+
+two:
+  purchase_id: 1
+  input_id: 1
+  amount: 1
+  total_value: 1.5

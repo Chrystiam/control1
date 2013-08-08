@@ -1,0 +1,10 @@
+<br>
+<h3 id='order'>Nuevo Pais</h3>
+<%= simple_form_for @country, :html => { :remote => true, :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <div id='fo' class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                countries_path, :class => 'btn btn-inverse	' %>
+  </div>
+<% end %>

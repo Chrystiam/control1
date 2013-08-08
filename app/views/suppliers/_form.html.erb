@@ -1,0 +1,71 @@
+<%= simple_form_for(@supplier, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" 
+             onclick="$.lazybox.close()">&times;</button>
+             <h3>Registrar Proveedor</h3>
+        </div>
+
+        <div class="modal-body">
+            <%= f.error_notification %>
+            <div class="row">
+                <div class="span6">
+                    <div class="row">
+                        <div class="span3">Nombre</div>
+                        <div class="span3">Ciudad</div>
+                    </div>
+                    <div class="row">
+                        <div class="span3"><%= f.input :name, :label => false %></div>
+                        <div class="span3"><%= f.association :city, :collection => City.all(:order => 'name'), :label => false %></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span3">Tipo de Documento</div>
+                        <div class="span3">Num de Documento</div>
+                    </div>
+                    <div class="row">
+                        <div class="span3"><%= f.association :doc, :collection => Doc.all(:order => 'name'), :label => false %></div>
+                        <div class="span3"><%= f.input :identification, :label => false %></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span3">Direccion</div>
+                        <div class="span3">Razon Social</div>
+                    </div>
+                    <div class="row">
+                      <div class="span3"><%= f.input :adress, :label => false, :input_html => {:class => 'span3'} %></div>
+                        <div class="span3"><%= f.input :social_reason, :label => false, :input_html => {:class => 'span3'} %></div>
+                    </div>
+                    <div class="row">
+                        <div class="span3">Responsable(Nombres y Apellidos)</div>
+                        <div class="span2">Telefono</div>
+                    </div>
+                    <div class="row">
+                        <div class="span3"><%= f.input :responsible, :label => false, :input_html => {:class => 'span3'} %></div>
+                        <div class="span2"><%= f.input :phone, :label => false, :input_html => {:class => 'span2'} %></div>
+                    </div>
+
+                    <div class="row">
+                          <div class="span3">Ocupacion</div>
+                          <div class="span3">Celular</div>
+                    </div>
+                    <div class="row">
+                          <div class="span3"><%= f.input :ocupation, :label => false %></div>
+                          <div class="span3"><%= f.input :cell, :label => false %></div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+            <%= f.button :submit, "Guardar", :class => 'btn-primary' %>
+        </div>
+
+    </div>
+<% end %>   
+

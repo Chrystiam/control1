@@ -1,0 +1,18 @@
+class Ability
+
+    include CanCan::Ability
+
+    def initialize(user)
+    	    user ||= User.new
+		       if user
+		          if user.has_role? :admin
+			            can :manage, :all   
+		          else 
+	              can [:update, :edit, :create], [Graduate]
+	           end	 
+		       else
+			         can :read, :all
+		       end 
+    end
+  
+end

@@ -1,0 +1,55 @@
+ <%- model_class = Input -%>
+<br>
+<h3 id='order'>Materiales e Insumos</h3>
+<br>
+<div id="buscar">
+   <%= form_tag request.path, :class => "well", :method => 'get' do %>
+
+     <div class = "row">
+        <div class="span9">
+           <div class = "row">
+              <div class="span4">
+                   <b>Nombre</b>
+                   <%= text_field_tag :name, params[:name], 
+                    :class=>"span3" %>
+              </div>
+              <div class="span4">
+                   <b>Categoria</b>
+                   <%= select_tag "categoria[]", options_from_collection_for_select(@categories, "id", "name",  
+                       params[:categoria.to_s]), :class => 'span3' %>
+              </div>
+              <div class="span1">
+                  <%= submit_tag "Buscar", :name => nil, :class => 'btn btn-success' %>
+              </div>
+           </div>
+        </div>
+     </div>
+
+   <% end %>
+</div>
+
+<table class="table table-striped">
+ <thead>
+   <tr>
+     <th>ID</th>
+     <th>Nombre</th>
+     <th>Descripción</th>
+     <th>Categoria</th>
+     <th></th>
+   </tr>
+ </thead>
+ <tbody>
+   <%= render @inputs %>
+ </tbody>
+</table>
+
+<div id='inputs' class="pagination">
+    <%= will_paginate(@inputs, :renderer => WillPaginate::ActionView::LinkRenderer,
+       :previous_label => '&laquo; Anterior', 
+       :next_label => 'Siguiente &raquo;') %>
+   <p class="pull-right">Total Registros : <%= @inputs.count %></p>
+</div>
+<p id='inputs' class="pull-left">
+      <%= link_to "Agregar Nuevo", new_input_path, :class => 'btn btn-primary', 
+          :remote => true %>
+</p>

@@ -1,0 +1,45 @@
+<div class='production_order'>
+    <%- model_class = ProductionOrder -%>
+
+    <div class="responsive">
+
+        <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+             <h4>Ordenes de Produccion </h4>
+             <img id='lazyimme' src="assets/logo_sena.png">
+        </div>
+
+        <div class="modal-body">
+
+                <p>
+                  <b>Fecha Programacion:</b>
+                  <%= @production_order.programing_date %>
+                </p>
+
+                <p>
+                  <b>Cliente:</b>
+                  <%= @production_order.client_id %>
+                </p>
+
+                <p>
+                  <b>Op:</b>
+                  <%= @production_order.op %>
+                </p>
+
+                <p>
+                  <b>Prenda:</b>
+                  <%= @production_order.garment.name %>
+                </p>
+
+                <p>
+                  <b>Cantidad Programada:</b>
+                  <%= @production_order.programed_amount %> Unidades
+                </p>
+        </div>
+                
+        <div id='fo' class="modal-footer">
+            <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<%- model_class = Region -%>
+<div class="page-header">
+ <h3 id='order'>Regiones</h3>
+</div>
+<br>
+ <table class="table table-striped">
+ <thead>
+   <tr>
+     <th>Id</th>
+     <th>Nombre</th>
+     <th>Pais</th>
+     <th></th>
+   </tr>
+ </thead>
+ <tbody>
+     <%=render @regions %>
+ </tbody>
+ <tfoot>
+ </tfoot>
+</table>
+<%= link_to 'Nueva Region', new_region_path, :remote => true, :class => 'btn btn-primary' %>
+
+  <div id='ocupa' class="pagination">
+   <%= will_paginate(@regions, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+                                
+   <p id='total' class="pull-right"> Total Regiones : <%= @regions.count %> </p>
+</div>

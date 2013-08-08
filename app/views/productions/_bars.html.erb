@@ -1,0 +1,9 @@
+<div class='bars'>
+
+	<h5>Resumen por Mes</h5>
+
+	<%= image_tag Gchart.pie_3d(:data => [@data.values, @data.keys],                    
+		                     :legend =>leyenda,
+		                     :bar_colors => ["228B22", "EEC900", "EE2C2C", "EE7600", "7171C6", "848484", "lime"],
+		                     :size => '400x300') %>
+</div>	 

@@ -1,0 +1,27 @@
+<%- model_class = Purchase-%> 
+<div class="page-header">
+  <h1>Compras</h1>
+</div>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Proveedor</th>
+      <th>Fecha</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @purchases %>
+  </tbody>
+</table>
+<%= link_to 'Nuevo Encabezado', new_purchase_path, :remote => true, :class => 'btn btn-primary' %>
+
+<div class="pagination">
+   <ul>
+      <%= will_paginate(@purchases, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+   </ul>
+   <p id='total' class="pull-right">Total Compras : <%= @purchases.count %></p>
+</div>

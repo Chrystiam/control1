@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : ".: Control :." %></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/sena_l.png">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+    <div id='forma1' class='well'>
+      <div id='forma2' class='well'>
+        <img id='dsd' src="assets/dsd.png">
+        <img id='efep' src="assets/logop.png">
+        <h1 id='con'>Producción de Centros</h1>
+        <div id='log'>
+        <%= image_tag('sena_l.png') %>
+        </div>
+        <div id='decla'>
+          <MARQUEE WIDTH='50%' HEIGHT='60'><%= image_tag('DE.png') %></MARQUEE>
+        </div>
+      </div>
+      <div id='book'>
+       <%= link_to image_tag("book.png", :size => "22x22"), root_path, :class => 'brand' %>
+       </div>
+      <% if current_user %> 
+
+      <% if  can? :update, admin_path %>
+           <li id='admin'><%= link_to "Admin", :admin, :class=>'colc' %></li>
+           <li id='invent'><%= link_to 'Inventario', :inventory, :class=>'colc' %></li>
+      <% end %>
+        <li  id='client'><%= link_to 'Clientes', :clients, :class=>'colc' %></li>
+        <li id='orden'><%= link_to 'O. Producc', :production_orders, :class=>'colc' %></li>
+        <li id='materiales'><%= link_to 'Materi/Insu', :inputs, :class=>'colc' %></li>
+        <li id='prendas'><%= link_to 'Prendas', :garments, :class=>'colc' %></li>
+        <li id='produc'><%= link_to 'Estadisticas', :statistics, :class=>'colc' %></li>
+        <li id='almacen'><%= link_to 'Ayuda', :ayuda, :class=>'colc' %></li>
+        <li style="float:right; ", id='salir'><%= link_to "Salir", :logout, :class=>'colc' %></li>
+      <% else %> 
+      <li id='login'><%= link_to "Ingresar", :login, :remote => true, :class=>'colc' %></li>
+      <div id='play'>
+       <%= link_to image_tag('play.png', :width=>'30', :title=>'Como Ingresar'),ingresolo_path, :remote => true %> 
+      </div>
+   <% end %>
+    <div id="main" role="main" class='well'>
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+          </div>
+          <%= render 'layouts/footer' %>
+        </div>
+      </div> <!--! end of .container -->
+    </div> <!--! end of #main -->
+     <footer id='foter'>
+       <small id='by'>
+         <MARQUEE WIDTH='50%' HEIGHT='60'>
+        By ADSI 323921. - ADSI - Todos los derechos reservados ©Copyright 2013 ::. 
+        </MARQUEE>
+      </small>
+      <nav id='by'>
+        <ul>
+          <li><%= link_to "Créditos", :about, :remote => true, :class=>'colc2' %></li>
+          <li><a href="http://www.sena.edu.co/" class="colc2">SENA</a></li>
+        </ul>
+      </nav>
+    </footer>
+    </div>
+  </body>
+</html>

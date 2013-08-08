@@ -1,0 +1,94 @@
+<%= simple_form_for(@user, :html => { :multipart => true, :remote => true } ) do |f| %>
+
+<div class="responsive">
+
+    <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$.lazybox.close()">&times;</button>
+         <h3>Datos Básicos Usuario</h3>
+    </div>
+
+    <div class="modal-body">
+
+      <%= f.error_notification %>
+      <%= display_base_errors @user %>
+
+      <div class="row">
+
+        <div class="span9">
+          
+            <div class="row">
+                <div class="span3">Email</div>
+                <div class="span3">Contraseña</div>
+                <div class="span3">Confirmar Contraseña</div>
+            </div>
+            <div class="row">
+                <div class="span3"><%= f.input :email, :label => false %></div>
+                <div class="span3"><%= f.input :password, :label => false %></div>
+                <div class="span3"><%= f.input :password_confirmation, :label => false %></div>
+            </div>
+
+            <div class="row">
+                <div class="span9">Nombres y Apellidos Completos</div>
+            </div>
+            <div class="row">
+                <div class="span9"><%= f.input :name, :label => false, :input_html => {:class => 'span9'} %></div>
+            </div>
+
+            <div class="row">
+                  <div class="span3">Teléfono</div>
+                  <div class="span3">IP</div>
+                  <div class="span3">Celular</div>
+            </div>
+            <div class="row">
+                  <div class="span3"><%= f.input :phone, :label => false %></div>
+                  <div class="span3"><%= f.input :ip, :label => false %></div>
+                  <div class="span3"><%= f.input :mobile, :label => false %></div>
+            </div>
+
+            <div class="row">
+                <div class="span9">Centro de Formación</div>
+                <div class="span9">
+                   <%= f.input :center_name, :url => autocomplete_center_name_users_path, 
+                               :as => :autocomplete, 
+                               :update_elements => {:center_id => '#user_center_id'}, :label => false, 
+                               :input_html => {:class => 'span9'} %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span5">Ubicación</div>
+                <div class="span4">Cargo</div>
+            </div>
+            <div class="row">
+                <div class="span5"><%= f.input :location, :label => false, :input_html => { :class => 'span5'} %></div>
+                <div class="span4"> <%= f.association :occupation, :label => false, :input_html => { :class => 'span4' } %></div>
+            </div>
+
+        </div>
+
+      </div>
+
+      <% if  can? :update, User %>
+          <div class="well well-small">
+             <% for role in Role.all %>
+                   <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
+                   <%= role.name %>
+                   <% if role.id % 4 == 0 %> 
+                         <br>
+                   <% end %>
+             <% end %>
+             <%= hidden_field_tag "user[role_ids][]", "" %>
+          </div>
+      <% end %>
+
+      <div id='fo' class="modal-footer">
+          <a href="#" class="btn btn-inverse" onclick="$.lazybox.close()">Cerrar</a>
+          <%= f.button :submit, "Guardar", :class => 'btn btn-primary' %> 
+      </div>
+      
+    <% end %>
+
+  </div>
+
+</div>
+

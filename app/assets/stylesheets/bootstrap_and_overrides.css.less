@@ -1,0 +1,94 @@
+@import "twitter/bootstrap/bootstrap";
+body { padding-top: 60px; }
+@import "twitter/bootstrap/responsive";
+
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+// Note: If you use asset_path() here, your compiled bootstrap_and_overrides.css will not
+//       have the proper paths. So for now we use the absolute path.
+@fontAwesomeEotPath: asset-path("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-path("fontawesome-webfont.eot#iefix");
+@fontAwesomeWoffPath: asset-path("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-path("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-path("fontawesome-webfont.svg");
+
+// Font Awesome
+@import "fontawesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+@primaryBackground: @linkColor;
+@btnSuccessBackgroundHighlight:@linkColor;
+@linkColor: #238276;
+
+
+@navbarInverseText: white;
+@navbarInverseLinkColorHover: #fc7323;
+
+@btnInverseBackground:              black;
+@btnInverseBackgroundHighlight:     #fc7323;
+      
+@tableBackgroundHover: gray;            
+
+// Parent container
+.accordion {
+background-color:#D8D8D8;
+  margin-bottom: @baseLineHeight;
+}
+
+// Group == heading + body
+.accordion-group {
+  background-color: #D8D8D8;
+  margin-bottom: 2px;
+  border: 1px solid #e5e5e5;
+  .border-radius(@baseBorderRadius);
+}
+.accordion-heading {
+
+  background-color: black;
+  border-bottom: 0;
+}
+.accordion-heading .accordion-toggle {
+  display: block;
+  padding: 8px 15px;
+}
+
+
+@inputBackground: #DEEDEB;
+@inputBorder: black;
+@inputBorderRadius: 4px;
+@inputDisabledBackground:  4px;
+
+.navbar-search {
+  position: relative;
+  .search-query {
+    .border-radius(15px); // redeclare because of specificity of the type attribute
+
+  }
+}
+
+.navbar-static-top {
+  position: static;
+  margin-bottom: 0; // remove 18px margin for default navbar
+  .navbar-inner {
+
+  }
+}
+
+

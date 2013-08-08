@@ -1,0 +1,35 @@
+<%- model_class = Supplier-%> 
+<div class="page-header">
+  <h1>Proveedores</h1>
+</div>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Doc</th>
+        <th>Identification</th>
+        <th>Social reason</th>
+        <th>Responsible</th>
+        <th>Ocupation</th>
+        <th>Adress</th>
+        <th>Phone</th>
+        <th>Cell</th>
+        <th>City</th>
+        <th></th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @suppliers %>
+  </tbody>
+</table>
+<%= link_to 'Nuevo Encabezado', new_supplier_path, :remote => true, :class => 'btn btn-primary' %>
+
+<div class="pagination">
+   <ul>
+      <%= will_paginate(@supplierss, :renderer => WillPaginate::ActionView::LinkRenderer,
+                                :previous_label => '&laquo; Anterior', 
+                                :next_label => 'Siguiente &raquo;') %>
+   </ul>
+   <p id='total' class="pull-right">Total Proveedores : <%= @suppliers.count %></p>
+</div>
